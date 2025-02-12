@@ -20,6 +20,7 @@
 		"exec": "tsx backend/api/index.ts"
 	},
 	"dependencies": {
+		"@heroicons/react": "^2.2.0",
 		"axios": "^1.7.9",
 		"cors": "^2.8.5",
 		"dayjs": "^1.11.10",
