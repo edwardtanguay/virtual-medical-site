@@ -9,6 +9,7 @@ import { Page404 } from "./pages/Page404.tsx";
 import { StoreProvider } from 'easy-peasy';
 import { store } from './store/store.ts';
 import { PageQuestionnaire } from "./pages/PageQuestionnaire.tsx";
+import { PageQuestionnaireDetail } from "./pages/PageQuestionnaireDetail.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
 			{
 				path: "questionnaire",
 				element: <PageQuestionnaire />,
+			},
+			{
+				path: "questionnaire/:questionnaireId",
+				element: <PageQuestionnaireDetail />,
 			},
 			{
 				path: "/",

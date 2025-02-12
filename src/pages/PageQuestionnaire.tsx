@@ -1,31 +1,28 @@
 import { useTypedStoreState } from "../store/hooks";
+import { useNavigate } from "react-router-dom";
 
 export const PageQuestionnaire = () => {
 	const { questionnaires } = useTypedStoreState(
 		(state) => state.questionnaireModel
 	);
+	const navigate = useNavigate();
 
 	return (
 		<div className="space-y-6">
-			<h2 className="text-xl mb-2">Available Questionnaires</h2>
-			<div className="space-y-4">
+			<h2 className="text-xl mb-4">Available Medical Consultations</h2>
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 				{Object.keys(questionnaires).map((questionnaireId) => (
 					<div
 						key={questionnaireId}
-						className="bg-white p-4 rounded-lg shadow-sm"
+						onClick={() => navigate(`/questionnaire/${questionnaireId}`)}
+						className="bg-white p-4 rounded-lg shadow-sm hover:bg-slate-50 cursor-pointer transition-colors"
 					>
-						<h3 className="text-lg font-medium mb-2">
-							{questionnaireId}
+						<h3 className="text-lg font-medium capitalize">
+							{questionnaireId.replace(/([A-Z])/g, ' $1').trim()}
 						</h3>
-						<div className="space-y-2">
-							{questionnaires[questionnaireId].map((question, index) => (
-								<div key={index} className="flex items-center gap-2 text-gray-600">
-									<span className="font-mono text-sm">{question.idCode}</span>
-									<span className="text-gray-400">-</span>
-									<span>{question.text}</span>
-								</div>
-							))}
-						</div>
+						<p className="text-sm text-gray-500 mt-1">
+							Click to start consultation
+						</p>
 					</div>
 				))}
 			</div>
