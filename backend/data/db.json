@@ -77,6 +77,138 @@
         "type": "saveAndEnd",
         "text": "Thank you for the information, we will contact you shortly."
       }
+    ],
+    "dental": [
+      {
+        "idCode": "dentalProblem",
+        "type": "multipleChoice",
+        "text": "What dental work are you interested in?",
+        "choices": [
+          "Dental implants",
+          "Veneers",
+          "Crowns",
+          "Teeth whitening",
+          "Other"
+        ],
+        "next": "thankYou"
+      },
+      {
+        "idCode": "thankYou",
+        "type": "saveAndEnd",
+        "text": "Thank you for your interest. We will contact you about dental treatment options."
+      }
+    ],
+    "rhinoplasty": [
+      {
+        "idCode": "rhinoplastyType",
+        "type": "multipleChoice",
+        "text": "What type of nose surgery are you interested in?",
+        "choices": [
+          "Aesthetic rhinoplasty",
+          "Functional rhinoplasty",
+          "Revision rhinoplasty",
+          "Not sure"
+        ],
+        "next": "thankYou"
+      },
+      {
+        "idCode": "thankYou",
+        "type": "saveAndEnd",
+        "text": "Thank you for your interest in rhinoplasty. We will contact you shortly."
+      }
+    ],
+    "breastSurgery": [
+      {
+        "idCode": "breastProcedure",
+        "type": "multipleChoice",
+        "text": "Which breast procedure are you interested in?",
+        "choices": [
+          "Breast augmentation",
+          "Breast reduction",
+          "Breast lift",
+          "Breast reconstruction",
+          "Not sure"
+        ],
+        "next": "thankYou"
+      },
+      {
+        "idCode": "thankYou",
+        "type": "saveAndEnd",
+        "text": "Thank you for your interest in breast surgery. We will contact you to discuss options."
+      }
+    ],
+    "plasticSurgery": [
+      {
+        "idCode": "procedureType",
+        "type": "multipleChoice",
+        "text": "Which area are you interested in?",
+        "choices": [
+          "Face lift",
+          "Eyelid surgery",
+          "Body contouring",
+          "Liposuction",
+          "Other"
+        ],
+        "next": "thankYou"
+      },
+      {
+        "idCode": "thankYou",
+        "type": "saveAndEnd",
+        "text": "Thank you for your interest in plastic surgery. We will contact you to discuss options."
+      }
+    ],
+    "weightLoss": [
+      {
+        "idCode": "weightLossProcedure",
+        "type": "multipleChoice",
+        "text": "Which weight loss procedure interests you?",
+        "choices": [
+          "Gastric bypass",
+          "Gastric sleeve",
+          "Gastric band",
+          "Non-surgical options",
+          "Not sure"
+        ],
+        "next": "thankYou"
+      },
+      {
+        "idCode": "thankYou",
+        "type": "saveAndEnd",
+        "text": "Thank you for your interest in weight loss procedures. We will contact you shortly."
+      }
+    ],
+    "reproductiveMedicine": [
+      {
+        "idCode": "fertilityTreatment",
+        "type": "multipleChoice",
+        "text": "What type of fertility treatment are you interested in?",
+        "choices": [
+          "IVF",
+          "IUI",
+          "Egg freezing",
+          "Fertility testing",
+          "Not sure"
+        ],
+        "next": "thankYou"
+      },
+      {
+        "idCode": "thankYou",
+        "type": "saveAndEnd",
+        "text": "Thank you for your interest in reproductive medicine. We will contact you to discuss options."
+      }
+    ],
+    "other": [
+      {
+        "idCode": "otherProcedure",
+        "type": "text",
+        "text": "Please describe the medical procedure you're interested in:",
+        "next": "thankYou"
+      },
+      {
+        "idCode": "thankYou",
+        "type": "saveAndEnd",
+        "text": "Thank you for your inquiry. We will review your request and contact you shortly."
+      }
     ]
   }
 }
