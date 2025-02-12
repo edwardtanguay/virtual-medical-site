@@ -20,12 +20,6 @@ export const PageAbout = () => {
 					<li>Database: LowDB (JSON-based)</li>
 				</ul>
 			</section>
-
-			<div className="mt-6">
-				<NavLink to="/welcome" className="btn-small">
-					Try the Flashcards →
-				</NavLink>
-			</div>
 		</div>
 	);
 };
