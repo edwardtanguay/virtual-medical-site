@@ -24,5 +24,59 @@
       "front": "navigate to the home directory",
       "back": "cd ~"
     }
-  ]
+  ],
+  "questionaires": {
+    "hairTransplant": [
+      {
+        "idCode": "percentHair",
+        "type": "range",
+        "text": "Percentage of hair you have left",
+        "minimum": 0,
+        "maximum": 100,
+        "minimumLabel": "0%",
+        "maximumLabel": "100%",
+        "next": {
+          "0-50": "majorOperation",
+          "51-100": "minorOperation"
+        }
+      },
+      {
+        "idCode": "majorOperation",
+        "type": "number",
+        "text": "What is your current age?",
+        "next": {
+          "0-17": "notEligibleTooYoung",
+          "90-120": "notEligibleTooOld",
+          "otherwise": "whenOperation"
+        }
+      },
+      {
+        "idCode": "notEligibleTooYoung",
+        "type": "cancel",
+        "text": "We're sorry, patients must be 18 years old or older."
+      },
+      {
+        "idCode": "notEligibleTooOld",
+        "type": "cancel",
+        "text": "We're sorry, patients must be 89 years old or younger."
+      },
+      {
+        "idCode": "whenOperation",
+        "type": "multipleChoice",
+        "text": "When would you like to have the operation done?",
+        "choices": [
+          "As soon as possible",
+          "In a few weeks",
+          "In a few months",
+          "I don't know yet"
+        ],
+        "next": "thankYou"
+      },
+      {
+        "idCode": "thankYou",
+        "type": "saveAndEnd",
+        "text": "Thank you for the information, we will contact you shortly."
+      }
+    ]
+  }
 }
