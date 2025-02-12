@@ -75,3 +75,20 @@ export const deleteFlashcard = async (suuid: string) => {
 		})();
 	});
 };
+
+export const getQuestionnaires = async () => {
+	return new Promise<Record<string, any[]>>((resolve, reject) => {
+		(async () => {
+			try {
+				const response = await axios.get(
+					`http://localhost:${config.getBackendPort()}/api/questionaires`
+				);
+				if (response.status === 200) {
+					resolve(response.data);
+				}
+			} catch (e: unknown) {
+				reject(new Error(`ERROR: ${(e as Error).message}`));
+			}
+		})();
+	});
+};

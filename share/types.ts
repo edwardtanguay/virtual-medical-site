@@ -26,3 +26,19 @@ export const PatchFlashcardSchema = NewFlashcardSchema.partial();
 
 export type PatchFlashcard = z.infer<typeof PatchFlashcardSchema>;
 
+export type QuestionnaireQuestion = {
+	idCode: string;
+	type: string;
+	text: string;
+	next?: Record<string, string> | string;
+	minimum?: number;
+	maximum?: number;
+	minimumLabel?: string;
+	maximumLabel?: string;
+	choices?: string[];
+};
+
+export type Questionnaires = {
+	[key: string]: QuestionnaireQuestion[];
+};
+
