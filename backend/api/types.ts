@@ -1,6 +1,6 @@
-import { Flashcard } from "../../share/types";
+import { Flashcard, Questionnaire } from "../../share/types";
 
 export type Database = {
 	flashcards: Flashcard[];
-	questionaires: Record<string, any[]>;
+	questionaires: Questionnaire;
 };

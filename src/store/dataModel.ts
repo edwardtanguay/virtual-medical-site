@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FlashcardSchema, FrontendFlashcard } from "../../share/types";
+import { FlashcardSchema, FrontendFlashcard, Questionnaire } from "../../share/types";
 import { DataModelResponse } from "./types";
 import * as config from '../../share/config';
 
@@ -77,14 +77,15 @@ export const deleteFlashcard = async (suuid: string) => {
 };
 
 export const getQuestionnaires = async () => {
-	return new Promise<Record<string, any[]>>((resolve, reject) => {
+	return new Promise<Questionnaire>((resolve, reject) => {
 		(async () => {
 			try {
 				const response = await axios.get(
 					`http://localhost:${config.getBackendPort()}/api/questionaires`
 				);
 				if (response.status === 200) {
-					resolve(response.data);
+					const questionnaires = response.data;
+					resolve(questionnaires);
 				}
 			} catch (e: unknown) {
 				reject(new Error(`ERROR: ${(e as Error).message}`));

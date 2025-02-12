@@ -1,47 +1,41 @@
 import { action, Action, thunk, Thunk } from "easy-peasy";
-import axios from "axios";
-import { Questionnaires } from "../../../share/types";
-import * as config from "../../../share/config";
-import { StoreModel } from "../store";
+import { Questionnaire } from "../../../share/types";
 import * as dataModel from "../dataModel";
+import { StoreModel } from "../store";
 
 export interface QuestionnaireModel {
 	// state
-	questionnaires: Record<string, any[]>;
-	isLoading: boolean;
-	error: string | null;
+	questionnaires: Questionnaire;
+	currentQuestionId: string | null;
 
 	// actions
-	setQuestionnaires: Action<this, Record<string, any[]>>;
-	setLoading: Action<this, boolean>;
-	setError: Action<this, string | null>;
+	setQuestionnaires: Action<this, Questionnaire>;
+	setCurrentQuestionId: Action<this, string | null>;
 
 	// thunks
-	loadQuestionnairesThunk: Thunk<this>;
+	loadQuestionnairesThunk: Thunk<this, void, void, StoreModel>;
 }
 
 export const questionnaireModel: QuestionnaireModel = {
 	// state
 	questionnaires: {},
-	isLoading: false,
-	error: null,
+	currentQuestionId: null,
 
 	// actions
 	setQuestionnaires: action((state, questionnaires) => {
-		state.questionnaires = questionnaires;
+		state.questionnaires = structuredClone(questionnaires);
 	}),
-	setLoading: action((state, isLoading) => {
-		state.isLoading = isLoading;
-	}),
-	setError: action((state, error) => {
-		state.error = error;
+	setCurrentQuestionId: action((state, questionId) => {
+		state.currentQuestionId = questionId;
 	}),
 
 	// thunks
-	loadQuestionnairesThunk: thunk((actions) => {
-		(async () => {
+	loadQuestionnairesThunk: thunk(async (actions) => {
+		try {
 			const questionnaires = await dataModel.getQuestionnaires();
 			actions.setQuestionnaires(questionnaires);
-		})();
+		} catch (error) {
+			console.error('Failed to load questionnaires:', error);
+		}
 	}),
 };
