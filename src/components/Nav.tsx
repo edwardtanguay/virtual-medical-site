@@ -18,6 +18,10 @@ const menuItems = [
 		idCode: "about",
 		title: "About",
 	},
+	{
+		idCode: "questionnaire",
+		title: "Questionnaire",
+	},
 ];
 
 export const Nav = () => {
