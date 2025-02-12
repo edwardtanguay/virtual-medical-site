@@ -1,5 +1,3 @@
-import { FlashcardArea } from "../components/FlashcardArea";
-import { useTypedStoreState } from "../store/hooks";
 import { NavLink } from "react-router-dom";
 import {
 	MagnifyingGlassIcon,
@@ -10,15 +8,12 @@ import {
 } from "@heroicons/react/24/outline";
 
 export const PageWelcome = () => {
-	const { message } = useTypedStoreState((state) => state.mainModel);
 
 	return (
 		<>
-			<p className="mb-3">{message}</p>
 			<div className="space-y-6">
-				<FlashcardArea />
 
-				<section className="my-8">
+				<section className="my-3">
 					<h2 className="text-2xl font-semibold mb-6">How It Works</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 						<div className="bg-white p-6 rounded-lg shadow-sm">
