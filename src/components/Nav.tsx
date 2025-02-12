@@ -18,10 +18,6 @@ const menuItems = [
 		idCode: "about",
 		title: "About",
 	},
-	{
-		idCode: "questionnaire",
-		title: "Questionnaire",
-	},
 ];
 
 export const Nav = () => {
@@ -29,7 +25,9 @@ export const Nav = () => {
 
 	const location = useLocation();
 	const pageIdCode = tools.chopLeft(location.pathname, "/");
-	const currentMenuItem = menuItems.find((m) => m.idCode === pageIdCode);
+	const currentMenuItem = pageIdCode === "questionnaire" 
+		? { idCode: "questionnaire", title: "Questionnaire" }
+		: menuItems.find((m) => m.idCode === pageIdCode);
 
 	const handleMenuToggle = () => {
 		setShowMobileMenu(!showMobileMenu);
