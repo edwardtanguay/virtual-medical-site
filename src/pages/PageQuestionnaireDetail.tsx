@@ -61,6 +61,12 @@ export const PageQuestionnaireDetail = () => {
 				}
 			}
 		} else if (currentQuestion.type === 'cancel') {
+			const newAnswers = {
+				...currentAnswers,
+				status: "aborted"
+			};
+			setCurrentAnswers(newAnswers);
+			saveSurveyResultToDatasourceThunk(newAnswers);
 			navigate('/questionnaire');
 		}
 
