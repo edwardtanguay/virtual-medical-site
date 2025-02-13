@@ -2,6 +2,8 @@
 
 This is a full-stack application that demonstrates a frontend questionnaire whose structure and interactivity is determined by a schema-driven flow fetched as JSON from the backend.
 
+![grafik](https://github.com/user-attachments/assets/ccb53066-e38a-4b5a-b5e6-b2095c99ed30)
+
 ## Features
 
 -   Create and manage surveys
