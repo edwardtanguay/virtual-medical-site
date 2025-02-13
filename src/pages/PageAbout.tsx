@@ -4,7 +4,7 @@ export const PageAbout = () => {
 			<section>
 				<h2 className="text-xl mb-2">About This Site</h2>
 				<p className="mb-2">
-					This is a full-stack application that demonstrates a frontend questionaire whose structure and interactivity is determined by a schema-driven flow fetched as JSON from the backend.
+					This is a full-stack application that demonstrates a frontend questionnaire whose structure and interactivity is determined by a schema-driven flow fetched as JSON from the backend.
 				</p>
 			</section>
 

@@ -8,7 +8,7 @@ export const getQuestionnaires = async () => {
 		(async () => {
 			try {
 				const response = await axios.get(
-					`http://localhost:${config.getBackendPort()}/api/questionaires`
+					`http://localhost:${config.getBackendPort()}/api/questionnaires`
 				);
 				if (response.status === 200) {
 					const questionnaires = response.data;

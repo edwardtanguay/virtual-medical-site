@@ -24,5 +24,5 @@ app.get("/", (_req, res) => {
   `);
 });
 
-app.use("/api/questionaires", questionnaireRouter);
+app.use("/api/questionnaires", questionnaireRouter);
 app.use("/api/survey-results", surveyResultRouter);

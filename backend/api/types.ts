@@ -1,6 +1,6 @@
 import { Questionnaire, SurveyResult } from "../../share/types";
 
 export type Database = {
-	questionaires: Questionnaire;
+	questionnaires: Questionnaire;
 	surveyResults: SurveyResult[];
 };
