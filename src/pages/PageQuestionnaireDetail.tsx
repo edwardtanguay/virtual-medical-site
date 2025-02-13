@@ -163,7 +163,7 @@ export const PageQuestionnaireDetail = () => {
 								setCurrentAnswers(newAnswers);
 								saveSurveyResultToDatasourceThunk(newAnswers);
 							}}
-							className="w-full accent-blue-500"
+							className="w-full accent-sky-600"
 						/>
 						<div className="text-center text-sm text-black">
 							{currentValue}{currentQuestion.valueSuffix}
@@ -222,7 +222,7 @@ export const PageQuestionnaireDetail = () => {
 										setCurrentAnswers(newAnswers);
 										saveSurveyResultToDatasourceThunk(newAnswers);
 									}}
-									className="text-blue-500 focus:ring-blue-500"
+									className="text-sky-600 focus:ring-sky-500"
 								/>
 								<span className="text-gray-700">{choice}</span>
 							</label>
@@ -253,7 +253,7 @@ export const PageQuestionnaireDetail = () => {
 						</div>
 						<button
 							onClick={handleNext}
-							className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+							className="bg-sky-600 hover:bg-sky-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
 						>
 							{currentQuestion.type === 'cancel'
 								? "Exit survey"

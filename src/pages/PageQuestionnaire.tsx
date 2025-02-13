@@ -9,18 +9,18 @@ export const PageQuestionnaire = () => {
 
 	return (
 		<div className="space-y-6">
-			<h2 className="text-xl mb-4">Available Medical Consultations</h2>
+			<h2 className="text-xl mb-4 text-slate-800">Available Medical Consultations</h2>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 				{Object.keys(questionnaires).map((questionnaireId) => (
 					<div
 						key={questionnaireId}
 						onClick={() => navigate(`/questionnaire/${questionnaireId}`)}
-						className="bg-green-100 p-4 rounded-lg shadow-sm hover:bg-green-200 cursor-pointer transition-colors"
+						className="bg-white p-4 rounded-lg shadow-md border border-slate-100 hover:bg-sky-50 cursor-pointer transition-colors"
 					>
-						<h3 className="text-lg font-medium capitalize">
+						<h3 className="text-lg font-medium text-slate-800 capitalize">
 							{questionnaireId.replace(/([A-Z])/g, ' $1').trim()}
 						</h3>
-						<p className="text-sm text-gray-500 mt-1">
+						<p className="text-sm text-slate-500 mt-1">
 							Click to start consultation
 						</p>
 					</div>

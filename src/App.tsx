@@ -11,7 +11,7 @@ function App() {
 	});
 
 	return (
-		<main className="bg-slate-400 p-4 w-full md:w-[60rem] mt-0 md:mt-6">
+		<main className="bg-slate-50 p-4 w-full md:w-[60rem] mt-0 md:mt-6 shadow-lg">
 			<Header />
 			<main className="py-4">
 				<Outlet />

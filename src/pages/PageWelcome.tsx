@@ -8,64 +8,62 @@ import {
 } from "@heroicons/react/24/outline";
 
 export const PageWelcome = () => {
-
 	return (
 		<>
 			<div className="space-y-6">
-
 				<section className="my-3">
-					<h2 className="text-2xl font-semibold mb-6">How It Works</h2>
+					<h2 className="text-2xl font-semibold mb-6 text-slate-800">How It Works</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-						<div className="bg-white p-6 rounded-lg shadow-sm">
+						<div className="bg-white p-6 rounded-lg shadow-md border border-slate-100">
 							<div className="flex items-center gap-2 mb-2">
-								<h3 className="text-lg font-medium">1. Browse</h3>
-								<MagnifyingGlassIcon className="w-6 h-6 text-blue-500" />
+								<h3 className="text-lg font-medium text-slate-800">1. Browse</h3>
+								<MagnifyingGlassIcon className="w-6 h-6 text-sky-600" />
 							</div>
-							<p className="text-gray-600">
+							<p className="text-slate-600">
 								Take a look through our extensive database of clinics and treatments. Compare options
 								to find what suits you best.
 							</p>
 						</div>
 
-						<div className="bg-white p-6 rounded-lg shadow-sm">
+						<div className="bg-white p-6 rounded-lg shadow-md border border-slate-100">
 							<div className="flex items-center gap-2 mb-2">
-								<h3 className="text-lg font-medium">2. Get in Touch</h3>
-								<ChatBubbleBottomCenterTextIcon className="w-6 h-6 text-blue-500" />
+								<h3 className="text-lg font-medium text-slate-800">2. Get in Touch</h3>
+								<ChatBubbleBottomCenterTextIcon className="w-6 h-6 text-sky-600" />
 							</div>
-							<p className="text-gray-600">
+							<p className="text-slate-600">
 								Found something interesting? Contact us to discuss your options. Our team is here
 								to answer all your questions.
 							</p>
 						</div>
 
-						<div className="bg-white p-6 rounded-lg shadow-sm">
+						<div className="bg-white p-6 rounded-lg shadow-md border border-slate-100">
 							<div className="flex items-center gap-2 mb-2">
-								<h3 className="text-lg font-medium">3. Getting Ready</h3>
-								<ClipboardDocumentCheckIcon className="w-6 h-6 text-blue-500" />
+								<h3 className="text-lg font-medium text-slate-800">3. Getting Ready</h3>
+								<ClipboardDocumentCheckIcon className="w-6 h-6 text-sky-600" />
 							</div>
-							<p className="text-gray-600">
+							<p className="text-slate-600">
 								Once you've chosen a clinic, we'll help prepare you for the procedure with
 								detailed information and support.
 							</p>
 						</div>
 
-						<div className="bg-white p-6 rounded-lg shadow-sm">
+						<div className="bg-white p-6 rounded-lg shadow-md border border-slate-100">
 							<div className="flex items-center gap-2 mb-2">
-								<h3 className="text-lg font-medium">4. At the Clinic</h3>
-								<BuildingOffice2Icon className="w-6 h-6 text-blue-500" />
+								<h3 className="text-lg font-medium text-slate-800">4. At the Clinic</h3>
+								<BuildingOffice2Icon className="w-6 h-6 text-sky-600" />
 							</div>
-							<p className="text-gray-600">
+							<p className="text-slate-600">
 								Your chosen clinic will guide you through the procedure. We'll be available
 								if you need any assistance.
 							</p>
 						</div>
 
-						<div className="bg-white p-6 rounded-lg shadow-sm">
+						<div className="bg-white p-6 rounded-lg shadow-md border border-slate-100">
 							<div className="flex items-center gap-2 mb-2">
-								<h3 className="text-lg font-medium">5. Road to Recovery</h3>
-								<HeartIcon className="w-6 h-6 text-blue-500" />
+								<h3 className="text-lg font-medium text-slate-800">5. Road to Recovery</h3>
+								<HeartIcon className="w-6 h-6 text-sky-600" />
 							</div>
-							<p className="text-gray-600">
+							<p className="text-slate-600">
 								Follow your recovery plan and keep in touch with your clinic. We're here to
 								support you throughout the healing process.
 							</p>
@@ -73,10 +71,10 @@ export const PageWelcome = () => {
 					</div>
 				</section>
 
-				<div className="mt-8 p-4 bg-slate-600 rounded-lg">
+				<div className="mt-8 p-4 bg-sky-700 rounded-lg shadow-md">
 					<h3 className="text-lg text-white mb-2">Need a Hair Transplant Consultation?</h3>
-					<p className="text-slate-200 mb-4">Take our quick questionnaire to evaluate your case.</p>
-					<NavLink to="/questionnaire" className="btn-small bg-green-200 hover:bg-green-100">
+					<p className="text-sky-100 mb-4">Take our quick questionnaire to evaluate your case.</p>
+					<NavLink to="/questionnaire" className="inline-block px-4 py-2 bg-white text-sky-700 rounded-md hover:bg-sky-50 transition-colors">
 						Start Questionnaire →
 					</NavLink>
 				</div>

@@ -30,68 +30,51 @@ export const Nav = () => {
 	};
 
 	return (
-		<>
-			{currentMenuItem && (
-				<nav>
-					<div className="md:hidden bg-slate-500 text-[1.2rem] px-4 py-2 content">
-						<div className="flex justify-between">
-							<p>
-								<NavLink to={currentMenuItem.idCode}>
-									{currentMenuItem.title}
-								</NavLink>
-							</p>
-							<p
-								className="mt-1 cursor-pointer"
-								onClick={handleMenuToggle}
+		<nav className="bg-sky-700 rounded-lg shadow-md mb-4">
+			<div className="px-4 py-3">
+				<div className="flex justify-between items-center">
+					<div className="hidden md:flex space-x-4">
+						{menuItems.map((menuItem) => (
+							<NavLink
+								key={menuItem.idCode}
+								to={`/${menuItem.idCode}`}
+								className={({ isActive }) =>
+									`text-white hover:text-sky-100 transition-colors ${
+										isActive ? "font-semibold" : ""
+									}`
+								}
 							>
-								<GiHamburgerMenu />
-							</p>
-						</div>
-						{showMobileMenu && (
-							<div>
-								{menuItems.map((menuItem, index) => {
-									return (
-										<React.Fragment key={index}>
-											{menuItem.idCode !==
-												currentMenuItem.idCode && (
-													<div className="mt-[.2rem]">
-														<NavLink
-															to={menuItem.idCode}
-															onClick={() =>
-																setShowMobileMenu(
-																	false
-																)
-															}
-														>
-															{menuItem.title}
-														</NavLink>
-													</div>
-												)}
-										</React.Fragment>
-									);
-								})}
-							</div>
-						)}
+								{menuItem.title}
+							</NavLink>
+						))}
 					</div>
-					<div className="hidden md:block bg-slate-500 px-4 py-2 content">
-						<ul className="flex gap-4">
-							{menuItems.map((menuItem, index) => {
-								return (
-									<React.Fragment key={index}>
-										{
-											<li key={index}>
-												<NavLink to={menuItem.idCode}>
-													{menuItem.title}
-												</NavLink>
-											</li>
-										}
-									</React.Fragment>
-								);
-							})}
-						</ul>
-					</div>
-				</nav>
+					<button
+						onClick={handleMenuToggle}
+						className="md:hidden text-white hover:text-sky-100"
+					>
+						<GiHamburgerMenu className="h-6 w-6" />
+					</button>
+				</div>
+			</div>
+
+			{/* Mobile menu */}
+			{showMobileMenu && (
+				<div className="md:hidden px-4 pb-3">
+					{menuItems.map((menuItem) => (
+						<NavLink
+							key={menuItem.idCode}
+							to={`/${menuItem.idCode}`}
+							className={({ isActive }) =>
+								`block py-2 text-white hover:text-sky-100 transition-colors ${
+									isActive ? "font-semibold" : ""
+								}`
+							}
+						>
+							{menuItem.title}
+						</NavLink>
+					))}
+				</div>
 			)}
-		</>
+		</nav>
 	);
 };
