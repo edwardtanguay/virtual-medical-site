@@ -40,6 +40,11 @@
       "questionnaireId": "hairTransplant",
       "whenTaken": "2025-02-13T11:52:27.760Z",
       "percentHair": 16
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T12:39:10.079Z",
+      "percentHair": 62
     }
   ],
   "questionaires": {

@@ -18,15 +18,11 @@ export const PageQuestionnaireDetail = () => {
 		(actions: any) => actions.surveyResultModel
 	);
 
-	const supportedTypes = ["range"] as const;
-
 	if (!questionnaireId || !questionnaires[questionnaireId]) {
 		return <div>Questionnaire not found</div>;
 	}
 
-	const allQuestions = questionnaires[questionnaireId];
-	// Filter questions to only include supported types
-	const questions = allQuestions.filter(q => supportedTypes.includes(q.type as any));
+	const questions = questionnaires[questionnaireId];
 	const currentQuestion = questions[currentQuestionIndex];
 	// Get default value for range questions
 	const getDefaultValue = (question: typeof currentQuestion) => {
