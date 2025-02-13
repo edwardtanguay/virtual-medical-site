@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 
@@ -15,6 +15,7 @@ const menuItems = [
 
 export const Nav = () => {
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
+	const location = useLocation();
 
 	const handleMenuToggle = () => {
 		setShowMobileMenu(!showMobileMenu);
@@ -24,10 +25,20 @@ export const Nav = () => {
 		setShowMobileMenu(false);
 	};
 
+	// Get current page title
+	const getCurrentPageTitle = () => {
+		const currentPath = location.pathname.split('/')[1] || 'welcome';
+		const currentMenuItem = menuItems.find(item => item.idCode === currentPath);
+		return currentMenuItem ? currentMenuItem.title : '';
+	};
+
 	return (
 		<nav className="bg-sky-700 rounded-lg shadow-md mb-4">
 			<div className="px-4 py-3">
 				<div className="flex justify-between items-center">
+					<div className="md:hidden text-white font-semibold">
+						{getCurrentPageTitle()}
+					</div>
 					<div className="hidden md:flex space-x-4">
 						{menuItems.map((menuItem) => (
 							<NavLink
