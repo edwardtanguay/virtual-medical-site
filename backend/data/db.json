@@ -26,42 +26,6 @@
     }
   ],
   "surveyResults": [
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T16:06:28.990Z",
-      "percentHair": 23,
-      "ageOfPatient": 95
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T16:07:36.032Z",
-      "percentHair": 26,
-      "ageOfPatient": 95
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T16:07:50.454Z",
-      "percentHair": 21,
-      "ageOfPatient": 17
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T16:08:00.104Z",
-      "percentHair": 19,
-      "ageOfPatient": 454
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T16:12:39.459Z",
-      "percentHair": 10,
-      "ageOfPatient": 4444
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T16:13:30.114Z",
-      "percentHair": 31,
-      "ageOfPatient": 56
-    }
   ],
   "questionaires": {
     "hairTransplant": [
