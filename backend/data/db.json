@@ -28,18 +28,11 @@
   "surveyResults": [
     {
       "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T17:10:54.584Z",
-      "status": "incomplete",
+      "whenTaken": "2025-02-13T17:14:42.864Z",
+      "status": "completed",
       "percentHair": 22,
       "ageOfPatient": 34,
-      "whenOperation": "As soon as possible"
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T17:11:13.190Z",
-      "status": "aborted",
-      "percentHair": 22,
-      "ageOfPatient": 13
+      "whenOperation": "In a few weeks"
     }
   ],
   "questionaires": {

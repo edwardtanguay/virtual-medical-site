@@ -68,13 +68,19 @@ export const PageQuestionnaireDetail = () => {
 			setCurrentAnswers(newAnswers);
 			saveSurveyResultToDatasourceThunk(newAnswers);
 			navigate('/questionnaire');
+		} else if (currentQuestion.type === 'saveAndEnd') {
+			const newAnswers = {
+				...currentAnswers,
+				status: "completed"
+			};
+			setCurrentAnswers(newAnswers);
+			saveSurveyResultToDatasourceThunk(newAnswers);
+			navigate('/questionnaire');
 		}
 
 		// Default navigation logic
 		if (currentQuestionIndex < questions.length - 1) {
 			setCurrentQuestionIndex(prev => prev + 1);
-		} else {
-			navigate('/questionnaire');
 		}
 	};
 
