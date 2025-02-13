@@ -11,19 +11,20 @@ const db: Low<Database> = new Low<Database>(adapter, {} as Database);
 await db.read();
 
 export const saveSurveyResult = async (result: SurveyResult) => {
-    const existingIndex = db.data.surveyResults.findIndex(
-        sr => sr.questionnaireId === result.questionnaireId && 
-             sr.whenTaken === result.whenTaken
-    );
+	const existingIndex = db.data.surveyResults.findIndex(
+		(sr) =>
+			sr.questionnaireId === result.questionnaireId &&
+			sr.whenTaken === result.whenTaken
+	);
 
-    if (existingIndex !== -1) {
-        // Replace existing result
-        db.data.surveyResults[existingIndex] = result;
-    } else {
-        // Add new result
-        db.data.surveyResults.push(result);
-    }
+	if (existingIndex !== -1) {
+		// Replace existing result
+		db.data.surveyResults[existingIndex] = result;
+	} else {
+		// Add new result
+		db.data.surveyResults.push(result);
+	}
 
-    await db.write();
-    return result;
-}; 
+	await db.write();
+	return result;
+};
