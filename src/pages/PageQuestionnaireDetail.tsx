@@ -128,6 +128,44 @@ export const PageQuestionnaireDetail = () => {
 					</div>
 				</div>
 			);
+		} else if (currentQuestion.type === 'multipleChoice') {
+			// Save first choice as default if no answer exists yet
+			if (!currentAnswers[currentQuestion.idCode]) {
+				const newAnswers = {
+					...currentAnswers,
+					[currentQuestion.idCode]: currentQuestion.choices[0]
+				};
+				setCurrentAnswers(newAnswers);
+				saveSurveyResultToDatasourceThunk(newAnswers);
+			}
+
+			return (
+				<div className="space-y-4">
+					<div>{currentQuestion.text}</div>
+					<div className="flex flex-col space-y-2">
+						{currentQuestion.choices.map((choice, index) => (
+							<label key={index} className="flex items-center space-x-2 cursor-pointer">
+								<input
+									type="radio"
+									name={currentQuestion.idCode}
+									value={choice}
+									checked={currentAnswers[currentQuestion.idCode] === choice}
+									onChange={() => {
+										const newAnswers = {
+											...currentAnswers,
+											[currentQuestion.idCode]: choice
+										};
+										setCurrentAnswers(newAnswers);
+										saveSurveyResultToDatasourceThunk(newAnswers);
+									}}
+									className="text-blue-500 focus:ring-blue-500"
+								/>
+								<span className="text-gray-700">{choice}</span>
+							</label>
+						))}
+					</div>
+				</div>
+			);
 		} else if (currentQuestion.type === 'cancel') {
 			return (
 				<div>
