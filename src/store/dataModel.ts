@@ -98,7 +98,7 @@ export const getQuestionnaires = async () => {
 	});
 };
 
-export const saveSurveyResult = async (surveyResult: SurveyResult) => {
+export const saveSurveyResult = async (surveyResult: unknown) => {
 	return new Promise<DataModelResponse>((resolve, reject) => {
 		(async () => {
 			try {
