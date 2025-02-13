@@ -24,7 +24,6 @@ export const mainModel: MainModel = {
 	// thunks
 	initialize: thunk((actions, _, helpers) => {
 		actions.setMessage("Welcome to this site.");
-		helpers.getStoreActions().flashcardModel.loadFlashcardsThunk();
 		helpers.getStoreActions().questionnaireModel.loadQuestionnairesThunk();
 	}),
 };

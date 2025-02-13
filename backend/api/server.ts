@@ -1,5 +1,4 @@
 import express from "express";
-import { flashcardRouter } from "./routers/flashcardRouter";
 import cors from "cors";
 import { questionnaireRouter } from "./routers/questionnaireRouter";
 import { surveyResultRouter } from "./routers/surveyResultRouter";
@@ -25,6 +24,5 @@ app.get("/", (_req, res) => {
   `);
 });
 
-app.use("/api/flashcards", flashcardRouter);
 app.use("/api/questionaires", questionnaireRouter);
 app.use("/api/survey-results", surveyResultRouter);

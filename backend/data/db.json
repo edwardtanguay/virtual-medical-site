@@ -1,31 +1,42 @@
 {
-  "flashcards": [
+  "surveyResults": [
     {
-      "suuid": "82Js23",
-      "category": "linux",
-      "front": "how to find out your shell",
-      "back": "echo $0"
+      "questionnaireId": "rhinoplasty",
+      "whenTaken": "2025-02-13T18:31:14.649Z",
+      "status": "incomplete",
+      "rhinoplastyType": "Aesthetic rhinoplasty"
     },
     {
-      "suuid": "2Jjq4a",
-      "category": "git",
-      "front": "get back file from staging area to working directory, i.e. unstage a file",
-      "back": "git reset [file]"
+      "questionnaireId": "rhinoplasty",
+      "whenTaken": "2025-02-13T18:36:50.085Z",
+      "status": "incomplete",
+      "rhinoplastyType": "Aesthetic rhinoplasty"
     },
     {
-      "suuid": "891As1",
-      "category": "git",
-      "front": "show commit history with hash, title, author",
-      "back": "git log --pretty=format:\"%h - %s - %an\" "
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T18:36:53.231Z",
+      "status": "incomplete",
+      "percentHair": 50
     },
     {
-      "suuid": "3bCd45",
-      "category": "linux",
-      "front": "navigate to the home directory",
-      "back": "cd ~"
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T18:41:27.275Z",
+      "status": "incomplete",
+      "percentHair": 50
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T18:46:18.496Z",
+      "status": "incomplete",
+      "percentHair": 50
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T18:49:01.448Z",
+      "status": "incomplete",
+      "percentHair": 50
     }
   ],
-  "surveyResults": [],
   "questionaires": {
     "hairTransplant": [
       {
