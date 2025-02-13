@@ -35,6 +35,7 @@
         "maximum": 100,
         "minimumLabel": "0%",
         "maximumLabel": "100%",
+        "valueSuffix": "%",
         "next": {
           "0-50": "majorOperation",
           "51-100": "minorOperation"
@@ -58,6 +59,7 @@
         "maximum": 10,
         "minimumLabel": "not useful",
         "maximumLabel": "very useful",
+        "valueSuffix": " out of 10",
         "next": {
           "0-50": "majorOperation",
           "51-100": "minorOperation"
