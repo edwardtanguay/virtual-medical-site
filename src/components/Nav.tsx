@@ -25,7 +25,7 @@ export const Nav = () => {
 
 	const location = useLocation();
 	const pageIdCode = tools.chopLeft(location.pathname, "/");
-	const currentMenuItem = pageIdCode === "questionnaire"
+	const currentMenuItem = pageIdCode.startsWith("questionnaire")
 		? { idCode: "questionnaire", title: "Questionnaire" }
 		: menuItems.find((m) => m.idCode === pageIdCode);
 
