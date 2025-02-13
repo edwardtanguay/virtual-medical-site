@@ -25,7 +25,21 @@
       "back": "cd ~"
     }
   ],
-  "surveyResults": [],
+  "surveyResults": [
+    {
+      "questionnaireId": "dental",
+      "whenTaken": "2025-02-13T18:15:55.809Z",
+      "status": "completed",
+      "lastDentalVisit": 3,
+      "painLevel": 7
+    },
+    {
+      "questionnaireId": "dental",
+      "whenTaken": "2025-02-13T18:16:14.183Z",
+      "status": "aborted",
+      "lastDentalVisit": 7
+    }
+  ],
   "questionaires": {
     "hairTransplant": [
       {
@@ -82,7 +96,39 @@
     ],
     "dental": [
       {
-        "idCode": "dentalProblem",
+        "idCode": "lastDentalVisit",
+        "type": "number",
+        "text": "How many months ago was your last dental visit?",
+        "next": {
+          "0-6": "painLevel",
+          "7-99999": "dentalCheckupFirst"
+        }
+      },
+      {
+        "idCode": "dentalCheckupFirst",
+        "type": "cancel",
+        "text": "We recommend getting a dental checkup first since it has been more than 6 months since your last visit."
+      },
+      {
+        "idCode": "painLevel",
+        "type": "range",
+        "text": "On a scale of 0-10, how would you rate your dental pain?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumLabel": "No Pain",
+        "maximumLabel": "Severe Pain",
+        "next": {
+          "0-3": "dentalProcedure",
+          "4-10": "emergencyConsult"
+        }
+      },
+      {
+        "idCode": "emergencyConsult",
+        "type": "saveAndEnd",
+        "text": "Given your pain level, we recommend an emergency consultation. We will contact you within 24 hours."
+      },
+      {
+        "idCode": "dentalProcedure",
         "type": "multipleChoice",
         "text": "What dental work are you interested in?",
         "choices": [
@@ -92,12 +138,32 @@
           "Teeth whitening",
           "Other"
         ],
-        "next": "thankYou"
+        "next": "treatmentTimeline"
       },
       {
-        "idCode": "thankYou",
+        "idCode": "treatmentTimeline",
+        "type": "number",
+        "text": "How many weeks from now would you like to start the treatment?",
+        "next": {
+          "0-1": "urgentScheduling",
+          "2-8": "normalScheduling",
+          "9-99999": "futureScheduling"
+        }
+      },
+      {
+        "idCode": "urgentScheduling",
         "type": "saveAndEnd",
-        "text": "Thank you for your interest. We will contact you about dental treatment options."
+        "text": "We will contact you within 24 hours to schedule your urgent appointment."
+      },
+      {
+        "idCode": "normalScheduling",
+        "type": "saveAndEnd",
+        "text": "Thank you for your interest. We will contact you within 2-3 business days to schedule your appointment."
+      },
+      {
+        "idCode": "futureScheduling",
+        "type": "saveAndEnd",
+        "text": "We've noted your preferred timeline. We will contact you 4 weeks before your desired start date."
       }
     ],
     "rhinoplasty": [
