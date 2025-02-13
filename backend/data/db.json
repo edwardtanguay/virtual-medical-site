@@ -25,37 +25,7 @@
       "back": "cd ~"
     }
   ],
-  "surveyResults": [
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T15:26:02.600Z",
-      "percentHair": 28,
-      "ageOfPatient": 95
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T15:27:36.477Z",
-      "percentHair": 19,
-      "ageOfPatient": 95
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T15:29:03.000Z",
-      "percentHair": 24,
-      "ageOfPatient": 95
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T15:33:19.294Z",
-      "percentHair": 21,
-      "ageOfPatient": 95
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T15:35:09.662Z",
-      "percentHair": 75
-    }
-  ],
+  "surveyResults": [],
   "questionaires": {
     "hairTransplant": [
       {
@@ -75,7 +45,7 @@
       {
         "idCode": "ageOfPatient",
         "type": "number",
-        "text": "What is your current age?",
+        "text": "Since adding more than 50% of hair will be a major operation, what is your current age?",
         "next": {
           "0-17": "notEligibleTooYoung",
           "18-89": "whenOperation",
@@ -86,12 +56,12 @@
       {
         "idCode": "notEligibleTooYoung",
         "type": "cancel",
-        "text": "We're sorry, patients must be 18 years old or older."
+        "text": "We're sorry, patients must be 18 or older."
       },
       {
         "idCode": "notEligibleTooOld",
         "type": "cancel",
-        "text": "We're sorry, patients must be 89 years old or younger."
+        "text": "We're sorry, patients must be 89 or younger."
       },
       {
         "idCode": "whenOperation",

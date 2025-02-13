@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTypedStoreState, useTypedStoreActions } from "../store/hooks";
+import { getDevMode } from "../../share/config";
 
 export const PageQuestionnaireDetail = () => {
 	const { questionnaireId } = useParams();
@@ -156,11 +157,12 @@ export const PageQuestionnaireDetail = () => {
 								? "Next"
 								: "Finish"}
 						</button>
-						{/* Debug display of all answers */}
-						<div className="p-4 bg-gray-800 text-gray-400 font-mono rounded text-xs">
-							<h3 className="mb-2">Debug - Current Answers:</h3>
-							<pre>{JSON.stringify(currentAnswers, null, 2)}</pre>
-						</div>
+						{getDevMode() && (
+							<div className="p-4 bg-gray-800 text-gray-400 font-mono rounded text-xs">
+								<h3 className="mb-2">Debug - Current Answers:</h3>
+								<pre>{JSON.stringify(currentAnswers, null, 2)}</pre>
+							</div>
+						)}
 					</>
 				) : (
 					<div className="p-4 text-green-500 text-xl">Finished!</div>
