@@ -10,5 +10,5 @@ const db: Low<Database> = new Low<Database>(adapter, {} as Database);
 await db.read();
 
 export const getAllQuestionnaires = () => {
-    return db.data.questionaires;
-}; 
+	return db.data.questionaires;
+};

@@ -5,7 +5,8 @@ import { SurveyResult } from "../../../share/types";
 export const surveyResultRouter = Router();
 
 surveyResultRouter.post("/", async (req, res) => {
-    const surveyResult: SurveyResult = req.body;
-    const savedResult = await surveyResultHandler.saveSurveyResult(surveyResult);
-    res.json(savedResult);
-}); 
+	const surveyResult: SurveyResult = req.body;
+	const savedResult =
+		await surveyResultHandler.saveSurveyResult(surveyResult);
+	res.json(savedResult);
+});
