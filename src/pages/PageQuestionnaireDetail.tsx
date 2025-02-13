@@ -153,9 +153,11 @@ export const PageQuestionnaireDetail = () => {
 							onClick={handleNext}
 							className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
 						>
-							{currentQuestionIndex < questions.length - 1
-								? "Next"
-								: "Finish"}
+							{currentQuestion.type === 'cancel' 
+								? "Exit survey" 
+								: currentQuestionIndex < questions.length - 1
+									? "Next"
+									: "Finish"}
 						</button>
 						{getDevMode() && (
 							<div className="p-4 bg-gray-800 text-gray-400 font-mono rounded text-xs">
