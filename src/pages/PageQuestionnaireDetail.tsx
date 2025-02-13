@@ -63,9 +63,6 @@ export const PageQuestionnaireDetail = () => {
 							}))}
 							className="w-full accent-blue-500"
 						/>
-						<div className="text-center font-medium text-lg">
-							{currentValue}
-						</div>
 					</div>
 				</div>
 			);
