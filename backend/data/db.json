@@ -158,6 +158,12 @@
       "whenTaken": "2025-02-13T17:54:20.468Z",
       "status": "completed",
       "dentalProblem": "Veneers"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:55:55.837Z",
+      "status": "incomplete",
+      "percentHair": 50
     }
   ],
   "questionaires": {
