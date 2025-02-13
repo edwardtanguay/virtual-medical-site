@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useTypedStoreState } from "../store/hooks";
+import { useTypedStoreState, useTypedStoreActions } from "../store/hooks";
 
 export const PageQuestionnaireDetail = () => {
 	const { questionnaireId } = useParams();
@@ -14,6 +14,9 @@ export const PageQuestionnaireDetail = () => {
 		questionnaireId: questionnaireId!,
 		whenTaken: new Date().toISOString()
 	}));
+	const { saveSurveyResultToDatasourceThunk } = useTypedStoreActions(
+		(actions: any) => actions.surveyResultModel
+	);
 
 	const supportedTypes = ["range"] as const;
 
@@ -64,10 +67,14 @@ export const PageQuestionnaireDetail = () => {
 							min={currentQuestion.minimum}
 							max={currentQuestion.maximum}
 							value={currentValue}
-							onChange={(e) => setCurrentAnswers(prev => ({
-								...prev,
-								[currentQuestion.idCode]: Number(e.target.value)
-							}))}
+							onChange={(e) => {
+								const newAnswers = {
+									...currentAnswers,
+									[currentQuestion.idCode]: Number(e.target.value)
+								};
+								setCurrentAnswers(newAnswers);
+								saveSurveyResultToDatasourceThunk(newAnswers);
+							}}
 							className="w-full accent-blue-500"
 						/>
 						<div className="text-center text-sm text-black">

@@ -28,14 +28,18 @@
   "surveyResults": [
     {
       "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T11:04:06.232Z",
-      "percentHair": 23,
-      "status": "working"
+      "whenTaken": "2025-02-13T11:51:01.200Z",
+      "percentHair": 68
     },
     {
       "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T11:04:06.233Z",
-      "percentHair": 333
+      "whenTaken": "2025-02-13T11:52:09.115Z",
+      "percentHair": 69
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T11:52:27.760Z",
+      "percentHair": 16
     }
   ],
   "questionaires": {
