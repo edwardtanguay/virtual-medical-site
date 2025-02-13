@@ -72,6 +72,8 @@ export const Nav = () => {
 			{/* Mobile menu */}
 			{showMobileMenu && (
 				<div className="md:hidden px-4 pb-3">
+					{/* Add a separator line */}
+					<div className="border-t border-slate-400 mb-2" />
 					{menuItems.map((menuItem) => (
 						<NavLink
 							key={menuItem.idCode}
