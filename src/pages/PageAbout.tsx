@@ -1,5 +1,3 @@
-import { NavLink } from "react-router-dom";
-
 export const PageAbout = () => {
 	return (
 		<div className="space-y-6">
