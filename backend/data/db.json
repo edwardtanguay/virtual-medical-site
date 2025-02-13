@@ -102,9 +102,36 @@
     {
       "questionnaireId": "hairTransplant",
       "whenTaken": "2025-02-13T17:43:12.869Z",
-      "status": "incomplete",
+      "status": "completed",
       "percentHair": 69,
+      "whenOperation": "In a few weeks"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:49:08.506Z",
+      "status": "incomplete",
+      "percentHair": 19
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:49:43.432Z",
+      "status": "completed",
+      "percentHair": 24,
+      "ageOfPatient": 33,
+      "whenOperation": "I don't know yet"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:50:22.126Z",
+      "status": "incomplete",
+      "ageOfPatient": 23,
       "whenOperation": "As soon as possible"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:50:29.389Z",
+      "status": "incomplete",
+      "percentHair": 36
     }
   ],
   "questionaires": {

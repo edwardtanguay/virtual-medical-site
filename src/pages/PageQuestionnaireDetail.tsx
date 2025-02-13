@@ -112,8 +112,8 @@ export const PageQuestionnaireDetail = () => {
 						return (
 							<div key={questionId} className="flex justify-between text-sm">
 								<span className="text-gray-600">{question?.text}</span>
-								<span className="font-medium">
-									{typeof answer === 'number' && question?.type === 'range'
+								<span className="font-medium text-right">
+									{typeof answer === 'number' && question?.type === 'range' 
 										? `${answer}${question.valueSuffix || ''}`
 										: answer}
 								</span>
@@ -234,7 +234,6 @@ export const PageQuestionnaireDetail = () => {
 				{questionnaireId.replace(/([A-Z])/g, ' $1').trim()} Consultation
 			</h2>
 			{renderProgressBar()}
-			{renderAnswersSoFar()}
 			<div className="space-y-4">
 				{currentQuestionIndex < questions.length ? (
 					<>
@@ -262,6 +261,7 @@ export const PageQuestionnaireDetail = () => {
 					<div className="p-4 text-green-500 text-xl">Finished!</div>
 				)}
 			</div>
+			{renderAnswersSoFar()}
 		</div>
 	);
 }; 
