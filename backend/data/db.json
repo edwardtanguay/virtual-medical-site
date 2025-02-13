@@ -55,7 +55,7 @@
         "idCode": "rating",
         "type": "range",
         "text": "How would you rate Cursor?",
-        "minimum": 0,
+        "minimum": 1,
         "maximum": 10,
         "minimumLabel": "not useful",
         "maximumLabel": "very useful",

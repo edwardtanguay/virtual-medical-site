@@ -63,6 +63,9 @@ export const PageQuestionnaireDetail = () => {
 							}))}
 							className="w-full accent-blue-500"
 						/>
+						<div className="text-center text-sm text-black">
+							{currentValue}{currentQuestion.valueSuffix}
+						</div>
 					</div>
 				</div>
 			);
