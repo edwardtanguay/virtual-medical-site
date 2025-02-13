@@ -13,7 +13,8 @@ export const PageQuestionnaireDetail = () => {
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [currentAnswers, setCurrentAnswers] = useState<Record<string, number | string>>(() => ({
 		questionnaireId: questionnaireId!,
-		whenTaken: new Date().toISOString()
+		whenTaken: new Date().toISOString(),
+		status: "incomplete"
 	}));
 	const { saveSurveyResultToDatasourceThunk } = useTypedStoreActions(
 		(actions: any) => actions.surveyResultModel

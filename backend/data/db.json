@@ -25,7 +25,21 @@
       "back": "cd ~"
     }
   ],
-  "surveyResults": [],
+  "surveyResults": [
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T16:56:27.616Z",
+      "status": "incomplete",
+      "percentHair": 66,
+      "whenOperation": "As soon as possible"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:07:20.427Z",
+      "status": "incomplete",
+      "percentHair": 25
+    }
+  ],
   "questionaires": {
     "hairTransplant": [
       {
