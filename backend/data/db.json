@@ -51,6 +51,19 @@
         }
       },
       {
+        "idCode": "rating",
+        "type": "range",
+        "text": "How could you rate Cursor?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumLabel": "0",
+        "maximumLabel": "10",
+        "next": {
+          "0-50": "majorOperation",
+          "51-100": "minorOperation"
+        }
+      },
+      {
         "idCode": "notEligibleTooYoung",
         "type": "cancel",
         "text": "We're sorry, patients must be 18 years old or older."

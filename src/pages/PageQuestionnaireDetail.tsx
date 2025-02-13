@@ -9,7 +9,7 @@ export const PageQuestionnaireDetail = () => {
 		(state) => state.questionnaireModel
 	);
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-	const [currentAnswer, setCurrentAnswer] = useState<number | null>(null);
+	const [currentAnswers, setCurrentAnswers] = useState<Record<string, number>>({});
 
 	if (!questionnaireId || !questionnaires[questionnaireId]) {
 		return <div>Questionnaire not found</div>;
@@ -19,7 +19,6 @@ export const PageQuestionnaireDetail = () => {
 	const currentQuestion = questions[currentQuestionIndex];
 
 	const handleNext = () => {
-		setCurrentAnswer(null);
 		if (currentQuestionIndex < questions.length - 1) {
 			setCurrentQuestionIndex(prev => prev + 1);
 		} else {
@@ -29,26 +28,30 @@ export const PageQuestionnaireDetail = () => {
 
 	const renderQuestionContent = () => {
 		if (currentQuestion.type === 'range') {
+			const currentValue = currentAnswers[currentQuestion.idCode] ?? currentQuestion.minimum;
 			return (
 				<div className="space-y-2">
-					<div>{currentQuestion.idCode}</div>
+					<div>{currentQuestion.text}</div>
 					<div className="flex items-center space-x-4">
 						<input
 							type="range"
 							min={currentQuestion.minimum}
 							max={currentQuestion.maximum}
-							value={currentAnswer ?? currentQuestion.minimum}
-							onChange={(e) => setCurrentAnswer(Number(e.target.value))}
+							value={currentValue}
+							onChange={(e) => setCurrentAnswers(prev => ({
+								...prev,
+								[currentQuestion.idCode]: Number(e.target.value)
+							}))}
 							className="w-full"
 						/>
 						<span className="w-12 text-center">
-							{currentAnswer ?? currentQuestion.minimum}
+							{currentValue}
 						</span>
 					</div>
 				</div>
 			);
 		}
-		return <div>{currentQuestion.idCode}</div>;
+		return <div>{currentQuestion.text}</div>;
 	};
 
 	return (
@@ -61,6 +64,11 @@ export const PageQuestionnaireDetail = () => {
 					<>
 						<div key={currentQuestionIndex} className="p-4 border rounded">
 							{renderQuestionContent()}
+						</div>
+						{/* Debug display of all answers */}
+						<div className="p-4 bg-gray-100 rounded">
+							<h3 className="font-bold mb-2">Debug - Current Answers:</h3>
+							<pre>{JSON.stringify(currentAnswers, null, 2)}</pre>
 						</div>
 						<button
 							onClick={handleNext}
