@@ -10,7 +10,9 @@ export const PageQuestionnaireDetail = () => {
 		(state) => state.questionnaireModel
 	);
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-	const [currentAnswers, setCurrentAnswers] = useState<Record<string, number>>({});
+	const [currentAnswers, setCurrentAnswers] = useState<Record<string, number | string>>(() => ({
+		whenSurveyTaken: new Date().toISOString()
+	}));
 
 	const supportedTypes = ["range"] as const;
 
