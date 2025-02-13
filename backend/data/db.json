@@ -31,6 +31,7 @@
         "idCode": "percentHair",
         "type": "range",
         "text": "Percentage of hair you have left:",
+          
         "minimum": 0,
         "maximum": 100,
         "minimumLabel": "0%",
