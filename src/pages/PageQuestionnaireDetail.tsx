@@ -22,9 +22,8 @@ export const PageQuestionnaireDetail = () => {
 	// Filter questions to only include supported types
 	const questions = allQuestions.filter(q => supportedTypes.includes(q.type as any));
 	const currentQuestion = questions[currentQuestionIndex];
-
 	// Get default value for range questions
-	const getDefaultValue = (questio: typeof currentQuestion) => {
+	const getDefaultValue = (question: typeof currentQuestion) => {
 		if (question.type === 'range') {
 			return Math.floor((question.maximum + question.minimum) / 2);
 		}
