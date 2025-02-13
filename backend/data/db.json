@@ -25,38 +25,7 @@
       "back": "cd ~"
     }
   ],
-  "surveyResults": [
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T11:51:01.200Z",
-      "percentHair": 68
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T11:52:09.115Z",
-      "percentHair": 69
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T11:52:27.760Z",
-      "percentHair": 16
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T12:39:10.079Z",
-      "percentHair": 62
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T12:57:15.391Z",
-      "percentHair": 69
-    },
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T12:59:03.496Z",
-      "percentHair": 69
-    }
-  ],
+  "surveyResults": [],
   "questionaires": {
     "hairTransplant": [
       {
