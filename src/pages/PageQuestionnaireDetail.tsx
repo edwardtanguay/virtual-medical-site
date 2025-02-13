@@ -35,8 +35,18 @@ export const PageQuestionnaireDetail = () => {
 	};
 
 	// Initialize answer with middle value if not set
-	const currentValue = currentAnswers[currentQuestion.idCode] ??
+	const currentValue = currentAnswers[currentQuestion.idCode] ?? 
 		(currentQuestion.type === 'range' ? getDefaultValue(currentQuestion) : 0);
+
+	// Save default value immediately if it's a range question and no answer exists
+	if (currentQuestion.type === 'range' && !currentAnswers[currentQuestion.idCode]) {
+		const newAnswers = {
+			...currentAnswers,
+			[currentQuestion.idCode]: currentValue
+		};
+		setCurrentAnswers(newAnswers);
+		saveSurveyResultToDatasourceThunk(newAnswers);
+	}
 
 	const handleNext = () => {
 		if (currentQuestion.type === 'range' || currentQuestion.type === 'number') {
