@@ -91,6 +91,20 @@
       "percentHair": 20,
       "ageOfPatient": 56,
       "whenOperation": "In a few weeks"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:42:49.319Z",
+      "status": "aborted",
+      "percentHair": 18,
+      "ageOfPatient": 12
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:43:12.869Z",
+      "status": "incomplete",
+      "percentHair": 69,
+      "whenOperation": "As soon as possible"
     }
   ],
   "questionaires": {

@@ -96,6 +96,35 @@ export const PageQuestionnaireDetail = () => {
 		);
 	};
 
+	const renderAnswersSoFar = () => {
+		const displayableAnswers = Object.entries(currentAnswers).filter(
+			([key]) => !['questionnaireId', 'whenTaken', 'status'].includes(key)
+		);
+
+		if (displayableAnswers.length === 0) return null;
+
+		return (
+			<div className="p-4 border rounded bg-gray-50">
+				<h3 className="font-medium mb-2">Your answers so far:</h3>
+				<div className="space-y-2">
+					{displayableAnswers.map(([questionId, answer]) => {
+						const question = questions.find(q => q.idCode === questionId);
+						return (
+							<div key={questionId} className="flex justify-between text-sm">
+								<span className="text-gray-600">{question?.text}</span>
+								<span className="font-medium">
+									{typeof answer === 'number' && question?.type === 'range'
+										? `${answer}${question.valueSuffix || ''}`
+										: answer}
+								</span>
+							</div>
+						);
+					})}
+				</div>
+			</div>
+		);
+	};
+
 	const renderQuestionContent = () => {
 		if (currentQuestion.type === 'range') {
 			return (
@@ -205,6 +234,7 @@ export const PageQuestionnaireDetail = () => {
 				{questionnaireId.replace(/([A-Z])/g, ' $1').trim()} Consultation
 			</h2>
 			{renderProgressBar()}
+			{renderAnswersSoFar()}
 			<div className="space-y-4">
 				{currentQuestionIndex < questions.length ? (
 					<>
