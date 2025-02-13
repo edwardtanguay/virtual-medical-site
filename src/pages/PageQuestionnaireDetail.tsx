@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTypedStoreState } from "../store/hooks";
@@ -19,11 +20,11 @@ export const PageQuestionnaireDetail = () => {
 
 	const allQuestions = questionnaires[questionnaireId];
 	// Filter questions to only include supported types
-	const questions = allQuestions.filter(q => supportedTypes.includes(q.type));
+	const questions = allQuestions.filter(q => supportedTypes.includes(q.type as any));
 	const currentQuestion = questions[currentQuestionIndex];
 
 	// Get default value for range questions
-	const getDefaultValue = (question: typeof currentQuestion) => {
+	const getDefaultValue = (questio: typeof currentQuestion) => {
 		if (question.type === 'range') {
 			return Math.floor((question.maximum + question.minimum) / 2);
 		}

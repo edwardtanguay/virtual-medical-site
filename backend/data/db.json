@@ -53,7 +53,7 @@
         }
       },
       {
-        "idCode": "rating",
+        "idCode": "cursorRating",
         "type": "range",
         "text": "How would you rate Cursor?",
         "minimum": 0,
@@ -61,6 +61,20 @@
         "minimumLabel": "not useful",
         "maximumLabel": "very useful",
         "valueSuffix": " out of 10",
+        "next": {
+          "0-50": "majorOperation",
+          "51-100": "minorOperation"
+        }
+      },
+      {
+        "idCode": "agiPrediction",
+        "type": "range",
+        "text": "In how many years would you say AGI will appear in our society?",
+        "minimum": 1,
+        "maximum": 50,
+        "minimumLabel": "next year",
+        "maximumLabel": "50 years",
+        "valueSuffix": " years",
         "next": {
           "0-50": "majorOperation",
           "51-100": "minorOperation"
