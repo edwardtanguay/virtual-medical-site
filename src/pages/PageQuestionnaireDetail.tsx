@@ -58,6 +58,8 @@ export const PageQuestionnaireDetail = () => {
 					}
 				}
 			}
+		} else if (currentQuestion.type === 'cancel') {
+			navigate('/questionnaire');
 		}
 
 		// Default navigation logic
@@ -69,6 +71,7 @@ export const PageQuestionnaireDetail = () => {
 	};
 
 	const renderQuestionContent = () => {
+		console.log(11111, currentQuestion);
 		if (currentQuestion.type === 'range') {
 			return (
 				<div className="space-y-4">
@@ -124,6 +127,12 @@ export const PageQuestionnaireDetail = () => {
 					</div>
 				</div>
 			);
+		} else if (currentQuestion.type === 'cancel') {
+			return (
+				<div>
+					<p>{currentQuestion.text}</p>
+				</div>
+			);
 		}
 		return <div>{currentQuestion.text}</div>;
 	};
@@ -139,19 +148,19 @@ export const PageQuestionnaireDetail = () => {
 						<div key={currentQuestionIndex} className="p-4 border rounded">
 							{renderQuestionContent()}
 						</div>
-						{/* Debug display of all answers */}
-						<div className="p-4 bg-gray-100 rounded">
-							<h3 className="font-bold mb-2">Debug - Current Answers:</h3>
-							<pre>{JSON.stringify(currentAnswers, null, 2)}</pre>
-						</div>
 						<button
 							onClick={handleNext}
 							className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
 						>
 							{currentQuestionIndex < questions.length - 1
-								? "Next Question"
+								? "Next"
 								: "Finish"}
 						</button>
+						{/* Debug display of all answers */}
+						<div className="p-4 bg-gray-800 text-gray-400 font-mono rounded text-xs">
+							<h3 className="mb-2">Debug - Current Answers:</h3>
+							<pre>{JSON.stringify(currentAnswers, null, 2)}</pre>
+						</div>
 					</>
 				) : (
 					<div className="p-4 text-green-500 text-xl">Finished!</div>
