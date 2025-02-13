@@ -35,7 +35,7 @@ export const PageQuestionnaireDetail = () => {
 	};
 
 	// Initialize answer with middle value if not set
-	const currentValue = currentAnswers[currentQuestion.idCode] ?? 
+	const currentValue = currentAnswers[currentQuestion.idCode] ??
 		(currentQuestion.type === 'range' ? getDefaultValue(currentQuestion) : 0);
 
 	// Save default value immediately if it's a range question and no answer exists
@@ -123,7 +123,7 @@ export const PageQuestionnaireDetail = () => {
 							<div key={questionId} className="flex justify-between text-sm">
 								<span className="text-gray-600">{question?.text}</span>
 								<span className="font-medium text-right">
-									{typeof answer === 'number' && question?.type === 'range' 
+									{typeof answer === 'number' && question?.type === 'range'
 										? `${answer}${question.valueSuffix || ''}`
 										: answer}
 								</span>

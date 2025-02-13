@@ -152,6 +152,12 @@
       "percentHair": 39,
       "ageOfPatient": 33,
       "whenOperation": "In a few months"
+    },
+    {
+      "questionnaireId": "dental",
+      "whenTaken": "2025-02-13T17:54:20.468Z",
+      "status": "completed",
+      "dentalProblem": "Veneers"
     }
   ],
   "questionaires": {
