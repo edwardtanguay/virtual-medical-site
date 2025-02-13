@@ -25,22 +25,7 @@
       "back": "cd ~"
     }
   ],
-  "surveyResults": [
-    {
-      "questionnaireId": "dental",
-      "whenTaken": "2025-02-13T18:15:55.809Z",
-      "status": "completed",
-      "lastDentalVisit": 3,
-      "painLevel": 7
-    },
-    {
-      "questionnaireId": "dental",
-      "whenTaken": "2025-02-13T18:16:14.183Z",
-      "status": "aborted",
-      
-      "lastDentalVisit": 7
-    }
-  ],
+  "surveyResults": [],
   "questionaires": {
     "hairTransplant": [
       {
