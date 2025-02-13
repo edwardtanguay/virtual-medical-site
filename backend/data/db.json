@@ -30,7 +30,7 @@
       {
         "idCode": "percentHair",
         "type": "range",
-        "text": "Percentage of hair you have left",
+        "text": "Percentage of hair you have left:",
         "minimum": 0,
         "maximum": 100,
         "minimumLabel": "0%",
@@ -53,7 +53,7 @@
       {
         "idCode": "rating",
         "type": "range",
-        "text": "How could you rate Cursor?",
+        "text": "How would you rate Cursor?",
         "minimum": 0,
         "maximum": 10,
         "minimumLabel": "not useful",

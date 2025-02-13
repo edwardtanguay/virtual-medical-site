@@ -18,6 +18,18 @@ export const PageQuestionnaireDetail = () => {
 	const questions = questionnaires[questionnaireId];
 	const currentQuestion = questions[currentQuestionIndex];
 
+	// Get default value for range questions
+	const getDefaultValue = (question: typeof currentQuestion) => {
+		if (question.type === 'range') {
+			return Math.floor((question.maximum + question.minimum) / 2);
+		}
+		return 0;
+	};
+
+	// Initialize answer with middle value if not set
+	const currentValue = currentAnswers[currentQuestion.idCode] ??
+		(currentQuestion.type === 'range' ? getDefaultValue(currentQuestion) : 0);
+
 	const handleNext = () => {
 		if (currentQuestionIndex < questions.length - 1) {
 			setCurrentQuestionIndex(prev => prev + 1);
@@ -44,16 +56,15 @@ export const PageQuestionnaireDetail = () => {
 							type="range"
 							min={currentQuestion.minimum}
 							max={currentQuestion.maximum}
-							value={currentAnswers[currentQuestion.idCode] ?? currentQuestion.minimum}
+							value={currentValue}
 							onChange={(e) => setCurrentAnswers(prev => ({
 								...prev,
 								[currentQuestion.idCode]: Number(e.target.value)
 							}))}
 							className="w-full accent-blue-500"
-							dir="rtl"
 						/>
 						<div className="text-center font-medium text-lg">
-							{currentAnswers[currentQuestion.idCode] ?? currentQuestion.minimum}
+							{currentValue}
 						</div>
 					</div>
 				</div>
