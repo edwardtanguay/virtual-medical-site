@@ -6,7 +6,7 @@ This is a full-stack application that demonstrates a frontend questionnaire whos
 
 ## Demo
 
-![virtmed001](https://github.com/user-attachments/assets/82c2cbeb-0d35-4277-aad2-d44f0d999e66)
+![virtmed002](https://github.com/user-attachments/assets/b7fe2d6b-6b5a-4a49-a193-526832165118)
 
 ## Features
 
