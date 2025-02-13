@@ -55,6 +55,22 @@
       "breathingDifficulty": 2,
       "cosmeticConcern": 1,
       "minorCorrection": 2
+    },
+    {
+      "questionnaireId": "breastSurgery",
+      "whenTaken": "2025-02-13T19:11:40.280Z",
+      "status": "aborted",
+      "breastProcedure": "Breast augmentation",
+      "currentAge": 16
+    },
+    {
+      "questionnaireId": "breastSurgery",
+      "whenTaken": "2025-02-13T19:11:56.150Z",
+      "status": "completed",
+      "breastProcedure": "Not sure",
+      "currentAge": 45,
+      "recentMammogram": 3,
+      "medicalHistory": 4
     }
   ],
   "questionaires": {
@@ -275,12 +291,82 @@
           "Breast reconstruction",
           "Not sure"
         ],
-        "next": "thankYou"
+        "next": "currentAge"
       },
       {
-        "idCode": "thankYou",
+        "idCode": "currentAge",
+        "type": "number",
+        "text": "What is your current age?",
+        "next": {
+          "0-17": "tooYoung",
+          "18-65": "recentMammogram",
+          "66-99999": "specialConsult"
+        }
+      },
+      {
+        "idCode": "tooYoung",
+        "type": "cancel",
+        "text": "We recommend waiting until you are at least 18 years old before considering breast surgery for optimal results."
+      },
+      {
+        "idCode": "specialConsult",
+        "type": "cancel",
+        "text": "Due to your age, we recommend scheduling a specialized consultation first to discuss your options and assess any potential risks."
+      },
+      {
+        "idCode": "recentMammogram",
+        "type": "number",
+        "text": "How many months ago was your last mammogram? (Enter 0 if never had one)",
+        "next": {
+          "0-0": "requireMammogram",
+          "1-12": "medicalHistory",
+          "13-99999": "requireMammogram"
+        }
+      },
+      {
+        "idCode": "requireMammogram",
+        "type": "cancel",
+        "text": "For your safety, we require a recent mammogram (within the last 12 months) before proceeding with breast surgery. Please schedule one and return to us with the results."
+      },
+      {
+        "idCode": "medicalHistory",
+        "type": "number",
+        "text": "How many previous breast surgeries have you had? (Enter 0 if none)",
+        "next": {
+          "0-0": "scheduleConsult",
+          "1-2": "scheduleConsult",
+          "3-99999": "specialEvaluation"
+        }
+      },
+      {
+        "idCode": "specialEvaluation",
         "type": "saveAndEnd",
-        "text": "Thank you for your interest in breast surgery. We will contact you to discuss options."
+        "text": "Due to your surgical history, we'll need to schedule a special evaluation. We will contact you within 24 hours to arrange this."
+      },
+      {
+        "idCode": "scheduleConsult",
+        "type": "number",
+        "text": "How many weeks from now would you like to schedule your consultation?",
+        "next": {
+          "0-1": "urgentConsult",
+          "2-8": "normalScheduling",
+          "9-99999": "futureScheduling"
+        }
+      },
+      {
+        "idCode": "urgentConsult",
+        "type": "saveAndEnd",
+        "text": "We will contact you within 24 hours to schedule your urgent consultation."
+      },
+      {
+        "idCode": "normalScheduling",
+        "type": "saveAndEnd",
+        "text": "Thank you for your interest. We will contact you within 2-3 business days to schedule your consultation."
+      },
+      {
+        "idCode": "futureScheduling",
+        "type": "saveAndEnd",
+        "text": "We've noted your preferred timeline. We will contact you 4 weeks before your desired consultation date."
       }
     ],
     "plasticSurgery": [
