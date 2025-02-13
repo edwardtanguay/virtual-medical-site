@@ -8,6 +8,10 @@ const menuItems = [
 		title: "Welcome",
 	},
 	{
+		idCode: "questionnaire",
+		title: "Questionnaire",
+	},
+	{
 		idCode: "about",
 		title: "About",
 	},
@@ -29,6 +33,9 @@ export const Nav = () => {
 	const getCurrentPageTitle = () => {
 		const currentPath = location.pathname.split('/')[1] || 'welcome';
 		const currentMenuItem = menuItems.find(item => item.idCode === currentPath);
+		if (currentPath.startsWith('questionnaire')) {
+			return 'Questionnaire'; // Display "Questionnaire" for questionnaire pages
+		}
 		return currentMenuItem ? currentMenuItem.title : '';
 	};
 
