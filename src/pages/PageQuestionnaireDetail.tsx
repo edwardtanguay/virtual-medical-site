@@ -37,15 +37,16 @@ export const PageQuestionnaireDetail = () => {
 		(currentQuestion.type === 'range' ? getDefaultValue(currentQuestion) : 0);
 
 	const handleNext = () => {
-		if (currentQuestion.type === 'range') {
-			const rangeValue = currentAnswers[currentQuestion.idCode] as number;
+		if (currentQuestion.type === 'range' || currentQuestion.type === 'number') {
+			const value = currentAnswers[currentQuestion.idCode] as number;
 
 			// Check if question has next mapping
 			if (currentQuestion.next) {
 				// Find matching range in next mapping
 				const nextQuestionId = Object.entries(currentQuestion.next).find(([range]) => {
+					if (range === 'otherwise') return true;
 					const [min, max] = range.split('-').map(Number);
-					return rangeValue >= min && rangeValue <= max;
+					return value >= min && value <= max;
 				})?.[1];
 
 				if (nextQuestionId) {
@@ -99,6 +100,27 @@ export const PageQuestionnaireDetail = () => {
 						<div className="text-center text-sm text-black">
 							{currentValue}{currentQuestion.valueSuffix}
 						</div>
+					</div>
+				</div>
+			);
+		} else if (currentQuestion.type === 'number') {
+			return (
+				<div className="space-y-4">
+					<div>{currentQuestion.text}</div>
+					<div className="flex flex-col space-y-2">
+						<input
+							type="number"
+							value={currentValue}
+							onChange={(e) => {
+								const newAnswers = {
+									...currentAnswers,
+									[currentQuestion.idCode]: Number(e.target.value)
+								};
+								setCurrentAnswers(newAnswers);
+								saveSurveyResultToDatasourceThunk(newAnswers);
+							}}
+							className="w-full p-2 border rounded"
+						/>
 					</div>
 				</div>
 			);

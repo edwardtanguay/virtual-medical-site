@@ -35,6 +35,24 @@
       "questionnaireId": "hairTransplant",
       "whenTaken": "2025-02-13T13:26:13.587Z",
       "percentHair": 18
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T13:50:13.842Z",
+      "percentHair": 25,
+      "majorOperation": 565
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T13:56:27.409Z",
+      "percentHair": 24,
+      "ageOfPatient": 222
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T15:14:57.472Z",
+      "percentHair": 34,
+      "ageOfPatient": 0
     }
   ],
   "questionaires": {
@@ -49,18 +67,19 @@
         "maximumLabel": "100%",
         "valueSuffix": "%",
         "next": {
-          "0-50": "majorOperation",
+          "0-50": "ageOfPatient",
           "51-100": "whenOperation"
         }
       },
       {
-        "idCode": "majorOperation",
+        "idCode": "ageOfPatient",
         "type": "number",
         "text": "What is your current age?",
         "next": {
           "0-17": "notEligibleTooYoung",
+          "18-89": "whenOperation",
           "90-120": "notEligibleTooOld",
-          "otherwise": "whenOperation"
+          "otherwise": "ageOfPatient"
         }
       },
       {
