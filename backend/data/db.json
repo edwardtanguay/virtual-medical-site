@@ -123,6 +123,15 @@
       "procedureType": "Face lift",
       "recentSurgery": 12,
       "bmi": 78
+    },
+    {
+      "questionnaireId": "weightLoss",
+      "whenTaken": "2025-02-13T19:32:32.937Z",
+      "status": "aborted",
+      "currentBMI": 34,
+      "weightLossProcedure": "Gastric sleeve",
+      "currentAge": 19,
+      "timeframe": 3
     }
   ],
   "questionaires": {
@@ -518,6 +527,32 @@
     ],
     "weightLoss": [
       {
+        "idCode": "currentBMI",
+        "type": "number",
+        "text": "What is your current BMI? (Enter 0 if unknown)",
+        "next": {
+          "0-0": "calculateBMI",
+          "1-29": "notEligible",
+          "30-39": "weightLossProcedure",
+          "40-99999": "specialConsult"
+        }
+      },
+      {
+        "idCode": "calculateBMI",
+        "type": "cancel",
+        "text": "Please calculate your BMI first using our BMI calculator or consult with your physician before proceeding."
+      },
+      {
+        "idCode": "notEligible",
+        "type": "cancel",
+        "text": "Based on your BMI, you may not need bariatric surgery. We recommend consulting with a nutritionist for personalized weight management strategies."
+      },
+      {
+        "idCode": "specialConsult",
+        "type": "cancel",
+        "text": "Due to your BMI, we recommend scheduling a specialized consultation first to discuss your options and create a customized treatment plan."
+      },
+      {
         "idCode": "weightLossProcedure",
         "type": "multipleChoice",
         "text": "Which weight loss procedure interests you?",
@@ -528,12 +563,46 @@
           "Non-surgical options",
           "Not sure"
         ],
-        "next": "thankYou"
+        "next": "currentAge"
+      },
+      {
+        "idCode": "currentAge",
+        "type": "number",
+        "text": "What is your current age?",
+        "next": {
+          "0-17": "tooYoung",
+          "18-65": "timeframe",
+          "66-99999": "seniorConsult"
+        }
+      },
+      {
+        "idCode": "tooYoung",
+        "type": "cancel",
+        "text": "Weight loss surgery is typically not recommended for patients under 18. Please consult with a pediatric specialist for appropriate options."
+      },
+      {
+        "idCode": "seniorConsult",
+        "type": "cancel",
+        "text": "Due to your age, we'll need to schedule a specialized consultation to evaluate your case and discuss potential risks."
+      },
+      {
+        "idCode": "timeframe",
+        "type": "number",
+        "text": "How many months have you been considering weight loss surgery?",
+        "next": {
+          "0-5": "lifestyleChanges",
+          "6-99999": "thankYou"
+        }
+      },
+      {
+        "idCode": "lifestyleChanges",
+        "type": "cancel",
+        "text": "We recommend trying supervised lifestyle changes for at least 6 months before considering surgery. We'll connect you with our weight management team."
       },
       {
         "idCode": "thankYou",
         "type": "saveAndEnd",
-        "text": "Thank you for your interest in weight loss procedures. We will contact you shortly."
+        "text": "Thank you for providing this information. We will contact you within 2-3 business days to schedule your consultation."
       }
     ],
     "reproductiveMedicine": [
