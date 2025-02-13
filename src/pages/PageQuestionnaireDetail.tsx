@@ -28,25 +28,33 @@ export const PageQuestionnaireDetail = () => {
 
 	const renderQuestionContent = () => {
 		if (currentQuestion.type === 'range') {
-			const currentValue = currentAnswers[currentQuestion.idCode] ?? currentQuestion.minimum;
 			return (
-				<div className="space-y-2">
+				<div className="space-y-4">
 					<div>{currentQuestion.text}</div>
-					<div className="flex items-center space-x-4">
+					<div className="flex flex-col space-y-2">
+						<div className="flex items-center justify-between">
+							<span className="text-sm text-gray-600">
+								{currentQuestion.minimumLabel}
+							</span>
+							<span className="text-sm text-gray-600">
+								{currentQuestion.maximumLabel}
+							</span>
+						</div>
 						<input
 							type="range"
 							min={currentQuestion.minimum}
 							max={currentQuestion.maximum}
-							value={currentValue}
+							value={currentAnswers[currentQuestion.idCode] ?? currentQuestion.minimum}
 							onChange={(e) => setCurrentAnswers(prev => ({
 								...prev,
 								[currentQuestion.idCode]: Number(e.target.value)
 							}))}
-							className="w-full"
+							className="w-full accent-blue-500"
+							dir="rtl"
 						/>
-						<span className="w-12 text-center">
-							{currentValue}
-						</span>
+						<div className="text-center font-medium text-lg">
+							{currentAnswers[currentQuestion.idCode] ?? currentQuestion.minimum}
+						</div>
 					</div>
 				</div>
 			);

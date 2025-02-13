@@ -56,8 +56,8 @@
         "text": "How could you rate Cursor?",
         "minimum": 0,
         "maximum": 10,
-        "minimumLabel": "0",
-        "maximumLabel": "10",
+        "minimumLabel": "not useful",
+        "maximumLabel": "very useful",
         "next": {
           "0-50": "majorOperation",
           "51-100": "minorOperation"
