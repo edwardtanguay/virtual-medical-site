@@ -36,8 +36,6 @@ This is a full-stack application that demonstrates a frontend questionnaire whos
 -   Node/Express
 -   TypeScript
 -   lowdb with JSON storage
--   Survey data validation
--   Response aggregation
 
 ## Getting Started
 
