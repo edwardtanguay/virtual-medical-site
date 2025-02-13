@@ -38,11 +38,12 @@ export const PageQuestionnaireDetail = () => {
 	const currentValue = currentAnswers[currentQuestion.idCode] ??
 		(currentQuestion.type === 'range' ? getDefaultValue(currentQuestion) : 0);
 
-	// Save default value immediately if it's a range question and no answer exists
+	// Add this effect to save default value when range question is shown
 	if (currentQuestion.type === 'range' && !currentAnswers[currentQuestion.idCode]) {
+		const defaultValue = getDefaultValue(currentQuestion);
 		const newAnswers = {
 			...currentAnswers,
-			[currentQuestion.idCode]: currentValue
+			[currentQuestion.idCode]: defaultValue
 		};
 		setCurrentAnswers(newAnswers);
 		saveSurveyResultToDatasourceThunk(newAnswers);
@@ -99,7 +100,7 @@ export const PageQuestionnaireDetail = () => {
 		return (
 			<div className="w-full h-2 bg-gray-200 rounded-full mb-4">
 				<div
-					className="h-full bg-green-600 rounded-full transition-all duration-300 ease-in-out"
+					className="h-full bg-orange-600 rounded-full transition-all duration-300 ease-in-out"
 					style={{ width: `${progress}%` }}
 				/>
 			</div>

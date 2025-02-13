@@ -15,7 +15,7 @@ export const PageQuestionnaire = () => {
 					<div
 						key={questionnaireId}
 						onClick={() => navigate(`/questionnaire/${questionnaireId}`)}
-						className="bg-white p-4 rounded-lg shadow-sm hover:bg-green-50 cursor-pointer transition-colors"
+						className="bg-green-100 p-4 rounded-lg shadow-sm hover:bg-green-200 cursor-pointer transition-colors"
 					>
 						<h3 className="text-lg font-medium capitalize">
 							{questionnaireId.replace(/([A-Z])/g, ' $1').trim()}

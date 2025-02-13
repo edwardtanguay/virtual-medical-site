@@ -76,7 +76,7 @@ export const PageWelcome = () => {
 				<div className="mt-8 p-4 bg-slate-600 rounded-lg">
 					<h3 className="text-lg text-white mb-2">Need a Hair Transplant Consultation?</h3>
 					<p className="text-slate-200 mb-4">Take our quick questionnaire to evaluate your case.</p>
-					<NavLink to="/questionnaire" className="btn-small bg-green-300 hover:bg-green-200">
+					<NavLink to="/questionnaire" className="btn-small bg-green-200 hover:bg-green-100">
 						Start Questionnaire →
 					</NavLink>
 				</div>
