@@ -112,3 +112,9 @@ export type MultipleChoiceQuestion = z.infer<
 export type CancelMessage = z.infer<typeof CancelMessageSchema>;
 export type SaveAndEndMessage = z.infer<typeof SaveAndEndMessageSchema>;
 export type Questionnaire = z.infer<typeof QuestionnaireSchema>;
+
+export type SurveyResult = {
+	questionnaireId: string;
+	whenTaken: string;
+	[key: string]: string | number; // Allow for dynamic question answers
+};
