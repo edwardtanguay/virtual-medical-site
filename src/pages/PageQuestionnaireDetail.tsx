@@ -72,7 +72,6 @@ export const PageQuestionnaireDetail = () => {
 	};
 
 	const renderQuestionContent = () => {
-		console.log(11111, currentQuestion);
 		if (currentQuestion.type === 'range') {
 			return (
 				<div className="space-y-4">
@@ -166,14 +165,13 @@ export const PageQuestionnaireDetail = () => {
 					</div>
 				</div>
 			);
-		} else if (currentQuestion.type === 'cancel') {
+		} else if (currentQuestion.type === 'cancel' || currentQuestion.type === 'saveAndEnd') {
 			return (
 				<div>
 					<p>{currentQuestion.text}</p>
 				</div>
 			);
 		}
-		return <div>{currentQuestion.text}</div>;
 	};
 
 	return (
@@ -193,9 +191,9 @@ export const PageQuestionnaireDetail = () => {
 						>
 							{currentQuestion.type === 'cancel'
 								? "Exit survey"
-								: currentQuestionIndex < questions.length - 1
-									? "Next"
-									: "Finish"}
+								: currentQuestion.type === 'saveAndEnd'
+									? "Finish"
+									: "Next"}
 						</button>
 						{getDevMode() && (
 							<div className="p-4 bg-gray-800 text-gray-400 font-mono rounded text-xs">
