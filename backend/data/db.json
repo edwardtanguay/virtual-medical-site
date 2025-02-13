@@ -25,7 +25,18 @@
       "back": "cd ~"
     }
   ],
-  "surveyResults": [],
+  "surveyResults": [
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T13:26:01.463Z",
+      "percentHair": 75
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T13:26:13.587Z",
+      "percentHair": 18
+    }
+  ],
   "questionaires": {
     "hairTransplant": [
       {

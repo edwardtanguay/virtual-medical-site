@@ -37,6 +37,29 @@ export const PageQuestionnaireDetail = () => {
 		(currentQuestion.type === 'range' ? getDefaultValue(currentQuestion) : 0);
 
 	const handleNext = () => {
+		if (currentQuestion.type === 'range') {
+			const rangeValue = currentAnswers[currentQuestion.idCode] as number;
+
+			// Check if question has next mapping
+			if (currentQuestion.next) {
+				// Find matching range in next mapping
+				const nextQuestionId = Object.entries(currentQuestion.next).find(([range]) => {
+					const [min, max] = range.split('-').map(Number);
+					return rangeValue >= min && rangeValue <= max;
+				})?.[1];
+
+				if (nextQuestionId) {
+					// Find index of the question with matching idCode
+					const nextIndex = questions.findIndex(q => q.idCode === nextQuestionId);
+					if (nextIndex !== -1) {
+						setCurrentQuestionIndex(nextIndex);
+						return;
+					}
+				}
+			}
+		}
+
+		// Default navigation logic
 		if (currentQuestionIndex < questions.length - 1) {
 			setCurrentQuestionIndex(prev => prev + 1);
 		} else {
