@@ -109,7 +109,7 @@ export const PageQuestionnaireDetail = () => {
 					<div>{currentQuestion.text}</div>
 					<div className="flex flex-col space-y-2">
 						<input
-							type="number"
+							type="text"
 							value={currentValue}
 							onChange={(e) => {
 								const newAnswers = {

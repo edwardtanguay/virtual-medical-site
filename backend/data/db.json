@@ -53,6 +53,30 @@
       "whenTaken": "2025-02-13T15:14:57.472Z",
       "percentHair": 34,
       "ageOfPatient": 0
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T15:17:10.868Z",
+      "percentHair": 25,
+      "ageOfPatient": null
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T15:17:59.219Z",
+      "percentHair": 29,
+      "ageOfPatient": 1
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T15:19:09.518Z",
+      "percentHair": 34,
+      "ageOfPatient": 45
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T15:19:48.810Z",
+      "percentHair": 22,
+      "ageOfPatient": 95
     }
   ],
   "questionaires": {
