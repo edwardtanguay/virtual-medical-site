@@ -132,6 +132,26 @@
       "weightLossProcedure": "Gastric sleeve",
       "currentAge": 19,
       "timeframe": 3
+    },
+    {
+      "questionnaireId": "reproductiveMedicine",
+      "whenTaken": "2025-02-13T19:33:23.605Z",
+      "status": "incomplete",
+      "fertilityTreatment": "IVF"
+    },
+    {
+      "questionnaireId": "reproductiveMedicine",
+      "whenTaken": "2025-02-13T19:34:26.750Z",
+      "status": "aborted",
+      "currentAge": 16
+    },
+    {
+      "questionnaireId": "reproductiveMedicine",
+      "whenTaken": "2025-02-13T19:34:35.659Z",
+      "status": "completed",
+      "currentAge": 23,
+      "fertilityTreatment": "IVF",
+      "tryingMonths": 12
     }
   ],
   "questionaires": {
@@ -607,22 +627,62 @@
     ],
     "reproductiveMedicine": [
       {
+        "idCode": "currentAge",
+        "type": "number",
+        "text": "What is your current age?",
+        "next": {
+          "0-17": "notEligibleTooYoung",
+          "18-45": "fertilityTreatment",
+          "46-99999": "specialConsultation"
+        }
+      },
+      {
+        "idCode": "notEligibleTooYoung",
+        "type": "cancel",
+        "text": "We recommend consulting with a pediatric specialist for reproductive health concerns under 18."
+      },
+      {
+        "idCode": "specialConsultation",
+        "type": "cancel",
+        "text": "Due to your age, we recommend scheduling a specialized consultation to discuss your options."
+      },
+      {
         "idCode": "fertilityTreatment",
         "type": "multipleChoice",
-        "text": "What type of fertility treatment are you interested in?",
+        "text": "Which fertility treatment are you interested in?",
         "choices": [
           "IVF",
           "IUI",
           "Egg freezing",
-          "Fertility testing",
+          "Fertility medication",
           "Not sure"
         ],
-        "next": "thankYou"
+        "next": "tryingMonths"
       },
       {
-        "idCode": "thankYou",
+        "idCode": "tryingMonths",
+        "type": "number",
+        "text": "How many months have you been trying to conceive? (Enter 0 if not applicable)",
+        "next": {
+          "0-5": "regularConsultation",
+          "6-11": "basicEvaluation",
+          "12-99999": "comprehensiveEvaluation"
+        }
+      },
+      {
+        "idCode": "regularConsultation",
         "type": "saveAndEnd",
-        "text": "Thank you for your interest in reproductive medicine. We will contact you to discuss options."
+        "text": "Based on your timeline, we recommend starting with a regular consultation. We will contact you within 2-3 business days to schedule."
+      },
+      {
+        "idCode": "basicEvaluation",
+        "type": "saveAndEnd",
+        "text": "Given your timeline, we recommend a basic fertility evaluation. We will contact you within 24-48 hours to schedule your appointment."
+      },
+      {
+        "idCode": "comprehensiveEvaluation",
+        "type": "saveAndEnd",
+        "text": "Based on your history, we recommend a comprehensive fertility evaluation. We will contact you within 24 hours to schedule your urgent consultation."
       }
     ],
     "other": [
