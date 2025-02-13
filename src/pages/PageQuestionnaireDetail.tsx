@@ -20,26 +20,8 @@ export const PageQuestionnaireDetail = () => {
 			</h2>
 			<div className="space-y-4">
 				{questions.map((question, index) => (
-					<div
-						key={index}
-						className="bg-white p-4 rounded-lg shadow-sm"
-					>
-						<div className="text-sm text-gray-500 mb-1">
-							{question.type}
-						</div>
-						<div className="text-lg">{question.text}</div>
-						{question.choices && (
-							<div className="mt-2 space-y-2">
-								{question.choices.map((choice, idx) => (
-									<div
-										key={idx}
-										className="text-gray-600 ml-4"
-									>
-										• {choice}
-									</div>
-								))}
-							</div>
-						)}
+					<div key={index} className="p-4 border rounded">
+						{question.idCode}
 					</div>
 				))}
 			</div>
