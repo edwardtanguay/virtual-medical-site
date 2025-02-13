@@ -152,6 +152,19 @@
       "currentAge": 23,
       "fertilityTreatment": "IVF",
       "tryingMonths": 12
+    },
+    {
+      "questionnaireId": "other",
+      "whenTaken": "2025-02-13T19:37:46.053Z",
+      "status": "aborted",
+      "currentAge": 4
+    },
+    {
+      "questionnaireId": "other",
+      "whenTaken": "2025-02-13T19:37:52.072Z",
+      "status": "aborted",
+      "currentAge": 31,
+      "medicalHistory": 4
     }
   ],
   "questionaires": {
@@ -687,15 +700,63 @@
     ],
     "other": [
       {
-        "idCode": "otherProcedure",
-        "type": "text",
-        "text": "Please describe the medical procedure you're interested in:",
-        "next": "thankYou"
+        "idCode": "currentAge",
+        "type": "number",
+        "text": "What is your current age?",
+        "next": {
+          "0-17": "notEligibleTooYoung",
+          "18-89": "medicalHistory",
+          "90-99999": "notEligibleTooOld"
+        }
       },
       {
-        "idCode": "thankYou",
+        "idCode": "notEligibleTooYoung",
+        "type": "cancel",
+        "text": "We recommend consulting with a pediatric specialist for patients under 18."
+      },
+      {
+        "idCode": "notEligibleTooOld",
+        "type": "cancel",
+        "text": "Due to age-related considerations, we recommend scheduling a specialized medical evaluation first."
+      },
+      {
+        "idCode": "medicalHistory",
+        "type": "number",
+        "text": "How many months ago was your last surgery or medical procedure? (Enter 0 if none)",
+        "next": {
+          "0-5": "waitForRecovery",
+          "6-99999": "procedureUrgency"
+        }
+      },
+      {
+        "idCode": "waitForRecovery",
+        "type": "cancel",
+        "text": "For your safety, we recommend waiting at least 6 months between medical procedures. Please consult with your physician."
+      },
+      {
+        "idCode": "procedureUrgency",
+        "type": "number",
+        "text": "On a scale of 1-10, how urgent is your medical concern? (1 being not urgent, 10 being very urgent)",
+        "next": {
+          "1-3": "normalConsult",
+          "4-7": "priorityConsult",
+          "8-10": "urgentConsult"
+        }
+      },
+      {
+        "idCode": "normalConsult",
         "type": "saveAndEnd",
-        "text": "Thank you for your inquiry. We will review your request and contact you shortly."
+        "text": "Thank you for your inquiry. We will contact you within 3-5 business days to schedule a consultation."
+      },
+      {
+        "idCode": "priorityConsult",
+        "type": "saveAndEnd",
+        "text": "Based on your situation, we will contact you within 1-2 business days to schedule your consultation."
+      },
+      {
+        "idCode": "urgentConsult",
+        "type": "saveAndEnd",
+        "text": "Given the urgency of your situation, we will contact you within 24 hours to schedule your consultation."
       }
     ]
   }
