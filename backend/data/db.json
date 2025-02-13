@@ -35,6 +35,26 @@
       "whenTaken": "2025-02-13T18:49:01.448Z",
       "status": "incomplete",
       "percentHair": 50
+    },
+    {
+      "questionnaireId": "rhinoplasty",
+      "whenTaken": "2025-02-13T18:52:42.655Z",
+      "status": "completed",
+      "rhinoplastyType": "Functional rhinoplasty"
+    },
+    {
+      "questionnaireId": "rhinoplasty",
+      "whenTaken": "2025-02-13T18:52:57.155Z",
+      "status": "aborted",
+      "breathingDifficulty": 8
+    },
+    {
+      "questionnaireId": "rhinoplasty",
+      "whenTaken": "2025-02-13T18:53:12.743Z",
+      "status": "completed",
+      "breathingDifficulty": 2,
+      "cosmeticConcern": 1,
+      "minorCorrection": 2
     }
   ],
   "questionaires": {
@@ -165,21 +185,82 @@
     ],
     "rhinoplasty": [
       {
-        "idCode": "rhinoplastyType",
-        "type": "multipleChoice",
-        "text": "What type of nose surgery are you interested in?",
-        "choices": [
-          "Aesthetic rhinoplasty",
-          "Functional rhinoplasty",
-          "Revision rhinoplasty",
-          "Not sure"
-        ],
-        "next": "thankYou"
+        "idCode": "breathingDifficulty",
+        "type": "range",
+        "text": "On a scale of 0-10, how would you rate your breathing difficulty through your nose?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumLabel": "No difficulty",
+        "maximumLabel": "Severe difficulty",
+        "valueSuffix": "/10",
+        "next": {
+          "0-3": "cosmeticConcern",
+          "4-10": "medicalEvaluation"
+        }
       },
       {
-        "idCode": "thankYou",
+        "idCode": "medicalEvaluation",
+        "type": "cancel",
+        "text": "Due to your breathing difficulties, we recommend scheduling a medical evaluation first before discussing cosmetic changes."
+      },
+      {
+        "idCode": "cosmeticConcern",
+        "type": "range",
+        "text": "How would you rate your cosmetic concern with your nose's appearance? (0 being completely satisfied, 10 being very dissatisfied)",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumLabel": "Satisfied",
+        "maximumLabel": "Very dissatisfied",
+        "valueSuffix": "/10",
+        "next": {
+          "0-4": "minorCorrection",
+          "5-10": "majorCorrection"
+        }
+      },
+      {
+        "idCode": "minorCorrection",
+        "type": "number",
+        "text": "How many months can you wait before having the procedure?",
+        "next": {
+          "0-1": "urgentConsult",
+          "2-6": "normalScheduling",
+          "7-99999": "futureScheduling"
+        }
+      },
+      {
+        "idCode": "majorCorrection",
+        "type": "number",
+        "text": "Since you're considering significant changes, what is your age?",
+        "next": {
+          "0-17": "tooYoung",
+          "18-65": "normalScheduling",
+          "66-99999": "specialConsult"
+        }
+      },
+      {
+        "idCode": "tooYoung",
+        "type": "cancel",
+        "text": "We recommend waiting until you are at least 18 years old before undergoing rhinoplasty for optimal results."
+      },
+      {
+        "idCode": "specialConsult",
         "type": "saveAndEnd",
-        "text": "Thank you for your interest in rhinoplasty. We will contact you shortly."
+        "text": "Due to your age, we'll need to schedule a special consultation to evaluate your case. We will contact you within 24 hours."
+      },
+      {
+        "idCode": "urgentConsult",
+        "type": "saveAndEnd",
+        "text": "We will contact you within 24 hours to schedule your urgent consultation."
+      },
+      {
+        "idCode": "normalScheduling",
+        "type": "saveAndEnd",
+        "text": "Thank you for your interest. We will contact you within 2-3 business days to schedule your consultation."
+      },
+      {
+        "idCode": "futureScheduling",
+        "type": "saveAndEnd",
+        "text": "We've noted your preferred timeline. We will contact you 4 weeks before your desired consultation date."
       }
     ],
     "breastSurgery": [
