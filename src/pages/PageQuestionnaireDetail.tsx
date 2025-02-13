@@ -11,11 +11,15 @@ export const PageQuestionnaireDetail = () => {
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [currentAnswers, setCurrentAnswers] = useState<Record<string, number>>({});
 
+	const supportedTypes = ["range"] as const;
+
 	if (!questionnaireId || !questionnaires[questionnaireId]) {
 		return <div>Questionnaire not found</div>;
 	}
 
-	const questions = questionnaires[questionnaireId];
+	const allQuestions = questionnaires[questionnaireId];
+	// Filter questions to only include supported types
+	const questions = allQuestions.filter(q => supportedTypes.includes(q.type));
 	const currentQuestion = questions[currentQuestionIndex];
 
 	// Get default value for range questions
