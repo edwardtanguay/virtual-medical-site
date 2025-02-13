@@ -71,6 +71,32 @@
       "currentAge": 45,
       "recentMammogram": 3,
       "medicalHistory": 4
+    },
+    {
+      "questionnaireId": "plasticSurgery",
+      "whenTaken": "2025-02-13T19:22:34.192Z",
+      "status": "aborted",
+      "currentAge": 16
+    },
+    {
+      "questionnaireId": "plasticSurgery",
+      "whenTaken": "2025-02-13T19:22:42.455Z",
+      "status": "aborted",
+      "currentAge": 34,
+      "procedureType": "Eyelid surgery",
+      "recentSurgery": 4
+    },
+    {
+      "questionnaireId": "dental",
+      "whenTaken": "2025-02-13T19:23:41.329Z",
+      "status": "aborted",
+      "lastDentalVisit": 34
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T19:23:59.131Z",
+      "status": "aborted",
+      "percentHair": 50
     }
   ],
   "questionaires": {
@@ -371,6 +397,26 @@
     ],
     "plasticSurgery": [
       {
+        "idCode": "currentAge",
+        "type": "number",
+        "text": "What is your current age?",
+        "next": {
+          "0-17": "notEligibleTooYoung",
+          "18-79": "procedureType",
+          "80-99999": "notEligibleTooOld"
+        }
+      },
+      {
+        "idCode": "notEligibleTooYoung",
+        "type": "cancel",
+        "text": "We recommend waiting until you are at least 18 years old before considering plastic surgery procedures."
+      },
+      {
+        "idCode": "notEligibleTooOld",
+        "type": "cancel",
+        "text": "Due to increased surgical risks, we recommend scheduling a specialized medical evaluation first for patients over 79."
+      },
+      {
         "idCode": "procedureType",
         "type": "multipleChoice",
         "text": "Which area are you interested in?",
@@ -381,12 +427,67 @@
           "Liposuction",
           "Other"
         ],
-        "next": "thankYou"
+        "next": "recentSurgery"
       },
       {
-        "idCode": "thankYou",
+        "idCode": "recentSurgery",
+        "type": "number",
+        "text": "How many months ago was your last surgical procedure? (Enter 0 if none)",
+        "next": {
+          "0-0": "bmi",
+          "1-5": "waitForRecovery",
+          "6-99999": "bmi"
+        }
+      },
+      {
+        "idCode": "waitForRecovery",
+        "type": "cancel",
+        "text": "For optimal results and safety, we recommend waiting at least 6 months between surgical procedures."
+      },
+      {
+        "idCode": "bmi",
+        "type": "number",
+        "text": "Please enter your current BMI (Body Mass Index). If unknown, enter 0 for guidance.",
+        "next": {
+          "0-0": "bmiCalculation",
+          "1-29": "scheduleConsult",
+          "30-99999": "weightManagement"
+        }
+      },
+      {
+        "idCode": "bmiCalculation",
+        "type": "cancel",
+        "text": "Please calculate your BMI first. You can use our BMI calculator tool or consult with your physician."
+      },
+      {
+        "idCode": "weightManagement",
+        "type": "cancel",
+        "text": "For optimal surgical outcomes, we recommend achieving a BMI of 30 or lower. Please consult with our weight management specialists first."
+      },
+      {
+        "idCode": "scheduleConsult",
+        "type": "number",
+        "text": "How many weeks from now would you like to schedule your consultation?",
+        "next": {
+          "0-1": "urgentConsult",
+          "2-8": "normalScheduling",
+          "9-99999": "futureScheduling"
+        }
+      },
+      {
+        "idCode": "urgentConsult",
         "type": "saveAndEnd",
-        "text": "Thank you for your interest in plastic surgery. We will contact you to discuss options."
+        "text": "We will contact you within 24 hours to schedule your urgent consultation."
+      },
+      {
+        "idCode": "normalScheduling",
+        "type": "saveAndEnd",
+        "text": "Thank you for your interest. We will contact you within 2-3 business days to schedule your consultation."
+      },
+      {
+        "idCode": "futureScheduling",
+        "type": "saveAndEnd",
+        "text": "We've noted your preferred timeline. We will contact you 4 weeks before your desired consultation date."
       }
     ],
     "weightLoss": [
