@@ -1,4 +1,4 @@
-# Virtual Medical Site- Full Stack
+# Virtual Medical Site
 
 This is a full-stack application that demonstrates a frontend questionnaire whose structure and interactivity is determined by a schema-driven flow fetched as JSON from the backend.
 
