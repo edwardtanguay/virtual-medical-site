@@ -25,14 +25,7 @@
       "back": "cd ~"
     }
   ],
-  "surveyResults": [
-    {
-      "questionnaireId": "hairTransplant",
-      "whenTaken": "2025-02-13T16:38:58.495Z",
-      "percentHair": 20,
-      "ageOfPatient": 95
-    }
-  ],
+  "surveyResults": [],
   "questionaires": {
     "hairTransplant": [
       {
