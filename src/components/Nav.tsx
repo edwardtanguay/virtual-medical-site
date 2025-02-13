@@ -1,9 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import * as tools from "../tools";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
-import React from "react";
 
 const menuItems = [
 	{
@@ -19,14 +16,12 @@ const menuItems = [
 export const Nav = () => {
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-	const location = useLocation();
-	const pageIdCode = tools.chopLeft(location.pathname, "/");
-	const currentMenuItem = pageIdCode.startsWith("questionnaire")
-		? { idCode: "questionnaire", title: "Questionnaire" }
-		: menuItems.find((m) => m.idCode === pageIdCode);
-
 	const handleMenuToggle = () => {
 		setShowMobileMenu(!showMobileMenu);
+	};
+
+	const handleNavClick = () => {
+		setShowMobileMenu(false);
 	};
 
 	return (
@@ -39,8 +34,7 @@ export const Nav = () => {
 								key={menuItem.idCode}
 								to={`/${menuItem.idCode}`}
 								className={({ isActive }) =>
-									`text-white hover:text-sky-100 transition-colors ${
-										isActive ? "font-semibold" : ""
+									`text-white hover:text-sky-100 transition-colors ${isActive ? "font-semibold" : ""
 									}`
 								}
 							>
@@ -64,9 +58,9 @@ export const Nav = () => {
 						<NavLink
 							key={menuItem.idCode}
 							to={`/${menuItem.idCode}`}
+							onClick={handleNavClick}
 							className={({ isActive }) =>
-								`block py-2 text-white hover:text-sky-100 transition-colors ${
-									isActive ? "font-semibold" : ""
+								`block py-2 text-white hover:text-sky-100 transition-colors ${isActive ? "font-semibold" : ""
 								}`
 							}
 						>

@@ -97,6 +97,32 @@
       "whenTaken": "2025-02-13T19:23:59.131Z",
       "status": "aborted",
       "percentHair": 50
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T19:27:32.445Z",
+      "status": "aborted",
+      "percentHair": 50
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T19:28:05.160Z",
+      "status": "incomplete",
+      "percentHair": 50
+    },
+    {
+      "questionnaireId": "plasticSurgery",
+      "whenTaken": "2025-02-13T19:28:10.046Z",
+      "status": "aborted"
+    },
+    {
+      "questionnaireId": "plasticSurgery",
+      "whenTaken": "2025-02-13T19:28:15.479Z",
+      "status": "aborted",
+      "currentAge": 55,
+      "procedureType": "Face lift",
+      "recentSurgery": 12,
+      "bmi": 78
     }
   ],
   "questionaires": {
