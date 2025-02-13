@@ -3,5 +3,5 @@ export const getBackendPort = () => {
 };
 
 export const getDevMode = () => {
-	return true;
+	return false;
 };

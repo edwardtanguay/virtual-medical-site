@@ -84,6 +84,18 @@ export const PageQuestionnaireDetail = () => {
 		}
 	};
 
+	const renderProgressBar = () => {
+		const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+		return (
+			<div className="w-full h-2 bg-gray-200 rounded-full mb-4">
+				<div
+					className="h-full bg-green-600 rounded-full transition-all duration-300 ease-in-out"
+					style={{ width: `${progress}%` }}
+				/>
+			</div>
+		);
+	};
+
 	const renderQuestionContent = () => {
 		if (currentQuestion.type === 'range') {
 			return (
@@ -192,6 +204,7 @@ export const PageQuestionnaireDetail = () => {
 			<h2 className="text-xl mb-4 capitalize">
 				{questionnaireId.replace(/([A-Z])/g, ' $1').trim()} Consultation
 			</h2>
+			{renderProgressBar()}
 			<div className="space-y-4">
 				{currentQuestionIndex < questions.length ? (
 					<>

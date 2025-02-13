@@ -33,6 +33,64 @@
       "percentHair": 22,
       "ageOfPatient": 34,
       "whenOperation": "In a few weeks"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:26:32.995Z",
+      "status": "completed",
+      "percentHair": 20,
+      "ageOfPatient": 34,
+      "whenOperation": "In a few months"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:27:00.022Z",
+      "status": "aborted",
+      "percentHair": 23,
+      "ageOfPatient": 12
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:27:36.605Z",
+      "status": "aborted",
+      "ageOfPatient": 12
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:30:07.301Z",
+      "status": "completed",
+      "percentHair": 21,
+      "ageOfPatient": 34,
+      "whenOperation": "In a few weeks"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:31:35.610Z",
+      "status": "completed",
+      "percentHair": 17,
+      "ageOfPatient": 34,
+      "whenOperation": "In a few months"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:35:52.095Z",
+      "status": "aborted"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:37:29.137Z",
+      "status": "completed",
+      "percentHair": 11,
+      "ageOfPatient": 45,
+      "whenOperation": "In a few weeks"
+    },
+    {
+      "questionnaireId": "hairTransplant",
+      "whenTaken": "2025-02-13T17:39:59.806Z",
+      "status": "completed",
+      "percentHair": 20,
+      "ageOfPatient": 56,
+      "whenOperation": "In a few weeks"
     }
   ],
   "questionaires": {
